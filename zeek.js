@@ -138,7 +138,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp12o31fvh.js
+// include: /tmp/tmpffm1y0dg.js
 if (!Module["expectedDataFileDownloads"]) {
   Module["expectedDataFileDownloads"] = 0;
 }
@@ -1193,2425 +1193,2425 @@ Module["expectedDataFileDownloads"]++;
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/files/x509/main.zeek",
       "start": 750625,
-      "end": 764008
+      "end": 764139
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/analyzer/README",
-      "start": 764008,
-      "end": 764212
+      "start": 764139,
+      "end": 764343
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/analyzer/__load__.zeek",
-      "start": 764212,
-      "end": 764253
+      "start": 764343,
+      "end": 764384
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/analyzer/dpd.zeek",
-      "start": 764253,
-      "end": 767593
+      "start": 764384,
+      "end": 767724
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/analyzer/logging.zeek",
-      "start": 767593,
-      "end": 771254
+      "start": 767724,
+      "end": 771385
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/analyzer/main.zeek",
-      "start": 771254,
-      "end": 782064
+      "start": 771385,
+      "end": 782195
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/broker/README",
-      "start": 782064,
-      "end": 782183
+      "start": 782195,
+      "end": 782314
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/broker/__load__.zeek",
-      "start": 782183,
-      "end": 782243
+      "start": 782314,
+      "end": 782374
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/broker/backpressure.zeek",
-      "start": 782243,
-      "end": 783539
+      "start": 782374,
+      "end": 783670
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/broker/log.zeek",
-      "start": 783539,
-      "end": 786757
+      "start": 783670,
+      "end": 786888
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/broker/main.zeek",
-      "start": 786757,
-      "end": 804953
+      "start": 786888,
+      "end": 805084
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/broker/store.zeek",
-      "start": 804953,
-      "end": 839907
+      "start": 805084,
+      "end": 840038
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/README",
-      "start": 839907,
-      "end": 84e4
+      "start": 840038,
+      "end": 840131
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/__load__.zeek",
-      "start": 84e4,
-      "end": 841674
+      "start": 840131,
+      "end": 841805
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/broker-stores.zeek",
-      "start": 841674,
-      "end": 843580
+      "start": 841805,
+      "end": 843711
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/main.zeek",
-      "start": 843580,
-      "end": 862543
+      "start": 843711,
+      "end": 862674
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/nodes/logger.zeek",
-      "start": 862543,
-      "end": 865456
+      "start": 862674,
+      "end": 865587
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/nodes/manager.zeek",
-      "start": 865456,
-      "end": 866402
+      "start": 865587,
+      "end": 866533
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/nodes/proxy.zeek",
-      "start": 866402,
-      "end": 867020
+      "start": 866533,
+      "end": 867151
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/nodes/worker.zeek",
-      "start": 867020,
-      "end": 867926
+      "start": 867151,
+      "end": 868057
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/pools.zeek",
-      "start": 867926,
-      "end": 880455
+      "start": 868057,
+      "end": 880586
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/pubsub.zeek",
-      "start": 880455,
-      "end": 881753
+      "start": 880586,
+      "end": 881884
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/setup-connections.zeek",
-      "start": 881753,
-      "end": 881869
+      "start": 881884,
+      "end": 882e3
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/setup-subscriptions.zeek",
-      "start": 881869,
-      "end": 882782
+      "start": 882e3,
+      "end": 882913
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/supervisor.zeek",
-      "start": 882782,
-      "end": 884210
+      "start": 882913,
+      "end": 884341
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/telemetry.zeek",
-      "start": 884210,
-      "end": 885396
+      "start": 884341,
+      "end": 885527
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/cluster/types.zeek",
-      "start": 885396,
-      "end": 890209
+      "start": 885527,
+      "end": 890340
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/config/README",
-      "start": 890209,
-      "end": 890317
+      "start": 890340,
+      "end": 890448
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/config/__load__.zeek",
-      "start": 890317,
-      "end": 890358
+      "start": 890448,
+      "end": 890489
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/config/input.zeek",
-      "start": 890358,
-      "end": 892368
+      "start": 890489,
+      "end": 892499
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/config/main.zeek",
-      "start": 892368,
-      "end": 897608
+      "start": 892499,
+      "end": 897739
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/config/weird.zeek",
-      "start": 897608,
-      "end": 898898
+      "start": 897739,
+      "end": 899029
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/control/README",
-      "start": 898898,
-      "end": 899091
+      "start": 899029,
+      "end": 899222
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/control/__load__.zeek",
-      "start": 899091,
-      "end": 899103
+      "start": 899222,
+      "end": 899234
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/control/main.zeek",
-      "start": 899103,
-      "end": 901749
+      "start": 899234,
+      "end": 901880
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/README",
-      "start": 901749,
-      "end": 901911
+      "start": 901880,
+      "end": 902042
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/__load__.zeek",
-      "start": 901911,
-      "end": 901938
+      "start": 902042,
+      "end": 902069
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/__load__.zeek",
-      "start": 901938,
-      "end": 902185
+      "start": 902069,
+      "end": 902316
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/archive.sig",
-      "start": 902185,
-      "end": 906233
+      "start": 902316,
+      "end": 906364
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/audio.sig",
-      "start": 906233,
-      "end": 906473
+      "start": 906364,
+      "end": 906604
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/executable.sig",
-      "start": 906473,
-      "end": 908208
+      "start": 906604,
+      "end": 908339
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/font.sig",
-      "start": 908208,
-      "end": 909262
+      "start": 908339,
+      "end": 909393
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/general.sig",
-      "start": 909262,
-      "end": 918697
+      "start": 909393,
+      "end": 918828
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/image.sig",
-      "start": 918697,
-      "end": 921808
+      "start": 918828,
+      "end": 921939
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/java.sig",
-      "start": 921808,
-      "end": 922550
+      "start": 921939,
+      "end": 922681
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/libmagic.sig",
-      "start": 922550,
-      "end": 988189
+      "start": 922681,
+      "end": 988320
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/office.sig",
-      "start": 988189,
-      "end": 1000483
+      "start": 988320,
+      "end": 1000614
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/programming.sig",
-      "start": 1000483,
-      "end": 1002929
+      "start": 1000614,
+      "end": 1003060
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/python.sig",
-      "start": 1002929,
-      "end": 1005841
+      "start": 1003060,
+      "end": 1005972
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/magic/video.sig",
-      "start": 1005841,
-      "end": 1007873
+      "start": 1005972,
+      "end": 1008004
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/files/main.zeek",
-      "start": 1007873,
-      "end": 1026665
+      "start": 1008004,
+      "end": 1026796
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/README",
-      "start": 1026665,
-      "end": 1026779
+      "start": 1026796,
+      "end": 1026910
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/__load__.zeek",
-      "start": 1026779,
-      "end": 1026929
+      "start": 1026910,
+      "end": 1027060
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/main.zeek",
-      "start": 1026929,
-      "end": 1036940
+      "start": 1027060,
+      "end": 1037071
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/readers/ascii.zeek",
-      "start": 1036940,
-      "end": 1039182
+      "start": 1037071,
+      "end": 1039313
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/readers/benchmark.zeek",
-      "start": 1039182,
-      "end": 1039705
+      "start": 1039313,
+      "end": 1039836
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/readers/binary.zeek",
-      "start": 1039705,
-      "end": 1040182
+      "start": 1039836,
+      "end": 1040313
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/readers/config.zeek",
-      "start": 1040182,
-      "end": 1041845
+      "start": 1040313,
+      "end": 1041976
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/readers/raw.zeek",
-      "start": 1041845,
-      "end": 1042548
+      "start": 1041976,
+      "end": 1042679
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/input/readers/sqlite.zeek",
-      "start": 1042548,
-      "end": 1043371
+      "start": 1042679,
+      "end": 1043502
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/intel/README",
-      "start": 1043371,
-      "end": 1043540
+      "start": 1043502,
+      "end": 1043671
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/intel/__load__.zeek",
-      "start": 1043540,
-      "end": 1043811
+      "start": 1043671,
+      "end": 1043942
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/intel/cluster.zeek",
-      "start": 1043811,
-      "end": 1048246
+      "start": 1043942,
+      "end": 1048377
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/intel/files.zeek",
-      "start": 1048246,
-      "end": 1050352
+      "start": 1048377,
+      "end": 1050483
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/intel/input.zeek",
-      "start": 1050352,
-      "end": 1053477
+      "start": 1050483,
+      "end": 1053608
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/intel/main.zeek",
-      "start": 1053477,
-      "end": 1075729
+      "start": 1053608,
+      "end": 1075860
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/README",
-      "start": 1075729,
-      "end": 1075806
+      "start": 1075860,
+      "end": 1075937
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/__load__.zeek",
-      "start": 1075806,
-      "end": 1075908
+      "start": 1075937,
+      "end": 1076039
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/main.zeek",
-      "start": 1075908,
-      "end": 1115458
+      "start": 1076039,
+      "end": 1115589
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/postprocessors/README",
-      "start": 1115458,
-      "end": 1115511
+      "start": 1115589,
+      "end": 1115642
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/postprocessors/__load__.zeek",
-      "start": 1115511,
-      "end": 1115536
+      "start": 1115642,
+      "end": 1115667
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/postprocessors/scp.zeek",
-      "start": 1115536,
-      "end": 1118380
+      "start": 1115667,
+      "end": 1118511
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/postprocessors/sftp.zeek",
-      "start": 1118380,
-      "end": 1121392
+      "start": 1118511,
+      "end": 1121523
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/writers/ascii.zeek",
-      "start": 1121392,
-      "end": 1125439
+      "start": 1121523,
+      "end": 1125570
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/writers/none.zeek",
-      "start": 1125439,
-      "end": 1125881
+      "start": 1125570,
+      "end": 1126012
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/logging/writers/sqlite.zeek",
-      "start": 1125881,
-      "end": 1128141
+      "start": 1126012,
+      "end": 1128272
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/README",
-      "start": 1128141,
-      "end": 1128300
+      "start": 1128272,
+      "end": 1128431
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/__load__.zeek",
-      "start": 1128300,
-      "end": 1128527
+      "start": 1128431,
+      "end": 1128658
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/cluster.zeek",
-      "start": 1128527,
-      "end": 1132822
+      "start": 1128658,
+      "end": 1132953
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/drop.zeek",
-      "start": 1132822,
-      "end": 1136193
+      "start": 1132953,
+      "end": 1136324
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/main.zeek",
-      "start": 1136193,
-      "end": 1167312
+      "start": 1136324,
+      "end": 1167443
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/non-cluster.zeek",
-      "start": 1167312,
-      "end": 1168560
+      "start": 1167443,
+      "end": 1168691
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugin.zeek",
-      "start": 1168560,
-      "end": 1172099
+      "start": 1168691,
+      "end": 1172230
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/README",
-      "start": 1172099,
-      "end": 1172137
+      "start": 1172230,
+      "end": 1172268
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/__load__.zeek",
-      "start": 1172137,
-      "end": 1172246
+      "start": 1172268,
+      "end": 1172377
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/acld.zeek",
-      "start": 1172246,
-      "end": 1180951
+      "start": 1172377,
+      "end": 1181082
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/broker.zeek",
-      "start": 1180951,
-      "end": 1187128
+      "start": 1181082,
+      "end": 1187259
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/debug.zeek",
-      "start": 1187128,
-      "end": 1190482
+      "start": 1187259,
+      "end": 1190613
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/openflow.zeek",
-      "start": 1190482,
-      "end": 1203469
+      "start": 1190613,
+      "end": 1203600
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/plugins/packetfilter.zeek",
-      "start": 1203469,
-      "end": 1205685
+      "start": 1203600,
+      "end": 1205816
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/shunt.zeek",
-      "start": 1205685,
-      "end": 1207652
+      "start": 1205816,
+      "end": 1207783
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/netcontrol/types.zeek",
-      "start": 1207652,
-      "end": 1213301
+      "start": 1207783,
+      "end": 1213432
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/README",
-      "start": 1213301,
-      "end": 1213579
+      "start": 1213432,
+      "end": 1213710
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/__load__.zeek",
-      "start": 1213579,
-      "end": 1213862
+      "start": 1213710,
+      "end": 1213993
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/actions/add-geodata.zeek",
-      "start": 1213862,
-      "end": 1215437
+      "start": 1213993,
+      "end": 1215568
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/actions/email_admin.zeek",
-      "start": 1215437,
-      "end": 1216347
+      "start": 1215568,
+      "end": 1216478
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/actions/page.zeek",
-      "start": 1216347,
-      "end": 1216880
+      "start": 1216478,
+      "end": 1217011
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/actions/pp-alarms.zeek",
-      "start": 1216880,
-      "end": 1223068
+      "start": 1217011,
+      "end": 1223199
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/main.zeek",
-      "start": 1223068,
-      "end": 1249147
+      "start": 1223199,
+      "end": 1249278
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/notice/weird.zeek",
-      "start": 1249147,
-      "end": 1267826
+      "start": 1249278,
+      "end": 1267957
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/README",
-      "start": 1267826,
-      "end": 1267944
+      "start": 1267957,
+      "end": 1268075
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/__load__.zeek",
-      "start": 1267944,
-      "end": 1268159
+      "start": 1268075,
+      "end": 1268290
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/cluster.zeek",
-      "start": 1268159,
-      "end": 1271387
+      "start": 1268290,
+      "end": 1271518
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/consts.zeek",
-      "start": 1271387,
-      "end": 1278286
+      "start": 1271518,
+      "end": 1278417
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/main.zeek",
-      "start": 1278286,
-      "end": 1287416
+      "start": 1278417,
+      "end": 1287547
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/non-cluster.zeek",
-      "start": 1287416,
-      "end": 1288380
+      "start": 1287547,
+      "end": 1288511
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/plugins/README",
-      "start": 1288380,
-      "end": 1288416
+      "start": 1288511,
+      "end": 1288547
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/plugins/__load__.zeek",
-      "start": 1288416,
-      "end": 1288484
+      "start": 1288547,
+      "end": 1288615
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/plugins/broker.zeek",
-      "start": 1288484,
-      "end": 1291530
+      "start": 1288615,
+      "end": 1291661
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/plugins/log.zeek",
-      "start": 1291530,
-      "end": 1293699
+      "start": 1291661,
+      "end": 1293830
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/plugins/ryu.zeek",
-      "start": 1293699,
-      "end": 1298818
+      "start": 1293830,
+      "end": 1298949
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/openflow/types.zeek",
-      "start": 1298818,
-      "end": 1303167
+      "start": 1298949,
+      "end": 1303298
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/packet-filter/README",
-      "start": 1303167,
-      "end": 1303242
+      "start": 1303298,
+      "end": 1303373
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/packet-filter/__load__.zeek",
-      "start": 1303242,
-      "end": 1303370
+      "start": 1303373,
+      "end": 1303501
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/packet-filter/cluster.zeek",
-      "start": 1303370,
-      "end": 1303770
+      "start": 1303501,
+      "end": 1303901
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/packet-filter/main.zeek",
-      "start": 1303770,
-      "end": 1314696
+      "start": 1303901,
+      "end": 1314827
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/packet-filter/netstats.zeek",
-      "start": 1314696,
-      "end": 1316032
+      "start": 1314827,
+      "end": 1316163
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/packet-filter/utils.zeek",
-      "start": 1316032,
-      "end": 1318016
+      "start": 1316163,
+      "end": 1318147
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/reporter/README",
-      "start": 1318016,
-      "end": 1318133
+      "start": 1318147,
+      "end": 1318264
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/reporter/__load__.zeek",
-      "start": 1318133,
-      "end": 1318146
+      "start": 1318264,
+      "end": 1318277
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/reporter/main.zeek",
-      "start": 1318146,
-      "end": 1320509
+      "start": 1318277,
+      "end": 1320640
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/signatures/README",
-      "start": 1320509,
-      "end": 1320744
+      "start": 1320640,
+      "end": 1320875
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/signatures/__load__.zeek",
-      "start": 1320744,
-      "end": 1320756
+      "start": 1320875,
+      "end": 1320887
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/signatures/main.zeek",
-      "start": 1320756,
-      "end": 1331165
+      "start": 1320887,
+      "end": 1331296
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/software/README",
-      "start": 1331165,
-      "end": 1331389
+      "start": 1331296,
+      "end": 1331520
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/software/__load__.zeek",
-      "start": 1331389,
-      "end": 1331401
+      "start": 1331520,
+      "end": 1331532
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/software/main.zeek",
-      "start": 1331401,
-      "end": 1347589
+      "start": 1331532,
+      "end": 1347720
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/spicy/__load__.zeek",
-      "start": 1347589,
-      "end": 1347607
+      "start": 1347720,
+      "end": 1347738
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/spicy/init-bare.zeek",
-      "start": 1347607,
-      "end": 1349043
+      "start": 1347738,
+      "end": 1349174
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/spicy/init-framework.zeek",
-      "start": 1349043,
-      "end": 1351712
+      "start": 1349174,
+      "end": 1351843
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/spicy/main.zeek",
-      "start": 1351712,
-      "end": 1352113
+      "start": 1351843,
+      "end": 1352244
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/storage/__load__.zeek",
-      "start": 1352113,
-      "end": 1352152
+      "start": 1352244,
+      "end": 1352283
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/storage/async.zeek",
-      "start": 1352152,
-      "end": 1356946
+      "start": 1352283,
+      "end": 1357077
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/storage/main.zeek",
-      "start": 1356946,
-      "end": 1358469
+      "start": 1357077,
+      "end": 1358600
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/storage/sync.zeek",
-      "start": 1358469,
-      "end": 1362156
+      "start": 1358600,
+      "end": 1362287
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/README",
-      "start": 1362156,
-      "end": 1362273
+      "start": 1362287,
+      "end": 1362404
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/__load__.zeek",
-      "start": 1362273,
-      "end": 1362534
+      "start": 1362404,
+      "end": 1362665
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/cluster.zeek",
-      "start": 1362534,
-      "end": 1379205
+      "start": 1362665,
+      "end": 1379336
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/main.zeek",
-      "start": 1379205,
-      "end": 1396482
+      "start": 1379336,
+      "end": 1396613
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/non-cluster.zeek",
-      "start": 1396482,
-      "end": 1398765
+      "start": 1396613,
+      "end": 1398896
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/README",
-      "start": 1398765,
-      "end": 1398811
+      "start": 1398896,
+      "end": 1398942
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/__load__.zeek",
-      "start": 1398811,
-      "end": 1398971
+      "start": 1398942,
+      "end": 1399102
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/average.zeek",
-      "start": 1398971,
-      "end": 1399823
+      "start": 1399102,
+      "end": 1399954
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/hll_unique.zeek",
-      "start": 1399823,
-      "end": 1401852
+      "start": 1399954,
+      "end": 1401983
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/last.zeek",
-      "start": 1401852,
-      "end": 1403790
+      "start": 1401983,
+      "end": 1403921
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/max.zeek",
-      "start": 1403790,
-      "end": 1404536
+      "start": 1403921,
+      "end": 1404667
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/min.zeek",
-      "start": 1404536,
-      "end": 1405281
+      "start": 1404667,
+      "end": 1405412
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/sample.zeek",
-      "start": 1405281,
-      "end": 1408106
+      "start": 1405412,
+      "end": 1408237
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/std-dev.zeek",
-      "start": 1408106,
-      "end": 1408889
+      "start": 1408237,
+      "end": 1409020
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/sum.zeek",
-      "start": 1408889,
-      "end": 1410111
+      "start": 1409020,
+      "end": 1410242
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/topk.zeek",
-      "start": 1410111,
-      "end": 1411523
+      "start": 1410242,
+      "end": 1411654
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/unique.zeek",
-      "start": 1411523,
-      "end": 1413582
+      "start": 1411654,
+      "end": 1413713
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/sumstats/plugins/variance.zeek",
-      "start": 1413582,
-      "end": 1415429
+      "start": 1413713,
+      "end": 1415560
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/supervisor/__load__.zeek",
-      "start": 1415429,
-      "end": 1415470
+      "start": 1415560,
+      "end": 1415601
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/supervisor/api.zeek",
-      "start": 1415470,
-      "end": 1422517
+      "start": 1415601,
+      "end": 1422648
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/supervisor/control.zeek",
-      "start": 1422517,
-      "end": 1427008
+      "start": 1422648,
+      "end": 1427139
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/supervisor/main.zeek",
-      "start": 1427008,
-      "end": 1429902
+      "start": 1427139,
+      "end": 1430033
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/telemetry/__load__.zeek",
-      "start": 1429902,
-      "end": 1429915
+      "start": 1430033,
+      "end": 1430046
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/telemetry/main.zeek",
-      "start": 1429915,
-      "end": 1446692
+      "start": 1430046,
+      "end": 1446823
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/telemetry/options.zeek",
-      "start": 1446692,
-      "end": 1448800
+      "start": 1446823,
+      "end": 1448931
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/tunnels/README",
-      "start": 1448800,
-      "end": 1448944
+      "start": 1448931,
+      "end": 1449075
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/tunnels/__load__.zeek",
-      "start": 1448944,
-      "end": 1448957
+      "start": 1449075,
+      "end": 1449088
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/frameworks/tunnels/main.zeek",
-      "start": 1448957,
-      "end": 1453704
+      "start": 1449088,
+      "end": 1453835
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/init-bare.zeek",
-      "start": 1453704,
-      "end": 1692958
+      "start": 1453835,
+      "end": 1693089
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/init-default.zeek",
-      "start": 1692958,
-      "end": 1695657
+      "start": 1693089,
+      "end": 1695788
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/init-frameworks-and-bifs.zeek",
-      "start": 1695657,
-      "end": 1696964
+      "start": 1695788,
+      "end": 1697095
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/init-supervisor.zeek",
-      "start": 1696964,
-      "end": 1697183
+      "start": 1697095,
+      "end": 1697314
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/misc/find-checksum-offloading.zeek",
-      "start": 1697183,
-      "end": 1699972
+      "start": 1697314,
+      "end": 1700103
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/misc/find-filtered-trace.zeek",
-      "start": 1699972,
-      "end": 1701570
+      "start": 1700103,
+      "end": 1701701
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/misc/installation.zeek",
-      "start": 1701570,
-      "end": 1702408
+      "start": 1701701,
+      "end": 1702539
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/misc/installation.zeek.in",
-      "start": 1702408,
-      "end": 1703231
+      "start": 1702539,
+      "end": 1703362
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/misc/version.zeek",
-      "start": 1703231,
-      "end": 1707887
+      "start": 1703362,
+      "end": 1708018
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/__load__.zeek",
-      "start": 1707887,
-      "end": 1708983
+      "start": 1708018,
+      "end": 1709114
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ayiya/__load__.zeek",
-      "start": 1708983,
-      "end": 1708995
+      "start": 1709114,
+      "end": 1709126
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ayiya/main.zeek",
-      "start": 1708995,
-      "end": 1709765
+      "start": 1709126,
+      "end": 1709896
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ethernet/__load__.zeek",
-      "start": 1709765,
-      "end": 1709777
+      "start": 1709896,
+      "end": 1709908
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ethernet/main.zeek",
-      "start": 1709777,
-      "end": 1711960
+      "start": 1709908,
+      "end": 1712091
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/fddi/__load__.zeek",
-      "start": 1711960,
-      "end": 1711972
+      "start": 1712091,
+      "end": 1712103
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/fddi/main.zeek",
-      "start": 1711972,
-      "end": 1712117
+      "start": 1712103,
+      "end": 1712248
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/geneve/__load__.zeek",
-      "start": 1712117,
-      "end": 1712129
+      "start": 1712248,
+      "end": 1712260
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/geneve/main.zeek",
-      "start": 1712129,
-      "end": 1713820
+      "start": 1712260,
+      "end": 1713951
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/gre/__load__.zeek",
-      "start": 1713820,
-      "end": 1713832
+      "start": 1713951,
+      "end": 1713963
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/gre/main.zeek",
-      "start": 1713832,
-      "end": 1714147
+      "start": 1713963,
+      "end": 1714278
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/gtpv1/__load__.zeek",
-      "start": 1714147,
-      "end": 1714159
+      "start": 1714278,
+      "end": 1714290
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/gtpv1/main.zeek",
-      "start": 1714159,
-      "end": 1715300
+      "start": 1714290,
+      "end": 1715431
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/icmp/__load__.zeek",
-      "start": 1715300,
-      "end": 1715312
+      "start": 1715431,
+      "end": 1715443
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/icmp/main.zeek",
-      "start": 1715312,
-      "end": 1715382
+      "start": 1715443,
+      "end": 1715513
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ieee802_11/__load__.zeek",
-      "start": 1715382,
-      "end": 1715394
+      "start": 1715513,
+      "end": 1715525
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ieee802_11/main.zeek",
-      "start": 1715394,
-      "end": 1715936
+      "start": 1715525,
+      "end": 1716067
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ieee802_11_radio/__load__.zeek",
-      "start": 1715936,
-      "end": 1715948
+      "start": 1716067,
+      "end": 1716079
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ieee802_11_radio/main.zeek",
-      "start": 1715948,
-      "end": 1716202
+      "start": 1716079,
+      "end": 1716333
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ip/__load__.zeek",
-      "start": 1716202,
-      "end": 1716214
+      "start": 1716333,
+      "end": 1716345
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ip/main.zeek",
-      "start": 1716214,
-      "end": 1717813
+      "start": 1716345,
+      "end": 1717944
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/iptunnel/__load__.zeek",
-      "start": 1717813,
-      "end": 1717825
+      "start": 1717944,
+      "end": 1717956
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/iptunnel/main.zeek",
-      "start": 1717825,
-      "end": 1721144
+      "start": 1717956,
+      "end": 1721275
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/linux_sll/__load__.zeek",
-      "start": 1721144,
-      "end": 1721156
+      "start": 1721275,
+      "end": 1721287
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/linux_sll/main.zeek",
-      "start": 1721156,
-      "end": 1721698
+      "start": 1721287,
+      "end": 1721829
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/linux_sll2/__load__.zeek",
-      "start": 1721698,
-      "end": 1721710
+      "start": 1721829,
+      "end": 1721841
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/linux_sll2/main.zeek",
-      "start": 1721710,
-      "end": 1722257
+      "start": 1721841,
+      "end": 1722388
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/llc/__load__.zeek",
-      "start": 1722257,
-      "end": 1722270
+      "start": 1722388,
+      "end": 1722401
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/llc/main.zeek",
-      "start": 1722270,
-      "end": 1722298
+      "start": 1722401,
+      "end": 1722429
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/main.zeek",
-      "start": 1722298,
-      "end": 1724994
+      "start": 1722429,
+      "end": 1725125
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/mpls/__load__.zeek",
-      "start": 1724994,
-      "end": 1725006
+      "start": 1725125,
+      "end": 1725137
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/mpls/main.zeek",
-      "start": 1725006,
-      "end": 1725151
+      "start": 1725137,
+      "end": 1725282
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/nflog/__load__.zeek",
-      "start": 1725151,
-      "end": 1725163
+      "start": 1725282,
+      "end": 1725294
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/nflog/main.zeek",
-      "start": 1725163,
-      "end": 1725514
+      "start": 1725294,
+      "end": 1725645
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/novell_802_3/__load__.zeek",
-      "start": 1725514,
-      "end": 1725527
+      "start": 1725645,
+      "end": 1725658
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/novell_802_3/main.zeek",
-      "start": 1725527,
-      "end": 1725713
+      "start": 1725658,
+      "end": 1725844
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/null/__load__.zeek",
-      "start": 1725713,
-      "end": 1725725
+      "start": 1725844,
+      "end": 1725856
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/null/main.zeek",
-      "start": 1725725,
-      "end": 1726729
+      "start": 1725856,
+      "end": 1726860
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/pbb/__load__.zeek",
-      "start": 1726729,
-      "end": 1726741
+      "start": 1726860,
+      "end": 1726872
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/pbb/main.zeek",
-      "start": 1726741,
-      "end": 1726891
+      "start": 1726872,
+      "end": 1727022
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ppp/__load__.zeek",
-      "start": 1726891,
-      "end": 1726904
+      "start": 1727022,
+      "end": 1727035
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ppp/main.zeek",
-      "start": 1726904,
-      "end": 1727443
+      "start": 1727035,
+      "end": 1727574
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ppp_serial/__load__.zeek",
-      "start": 1727443,
-      "end": 1727455
+      "start": 1727574,
+      "end": 1727586
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/ppp_serial/main.zeek",
-      "start": 1727455,
-      "end": 1728041
+      "start": 1727586,
+      "end": 1728172
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/pppoe/__load__.zeek",
-      "start": 1728041,
-      "end": 1728053
+      "start": 1728172,
+      "end": 1728184
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/pppoe/main.zeek",
-      "start": 1728053,
-      "end": 1728344
+      "start": 1728184,
+      "end": 1728475
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/root/__load__.zeek",
-      "start": 1728344,
-      "end": 1728356
+      "start": 1728475,
+      "end": 1728487
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/root/main.zeek",
-      "start": 1728356,
-      "end": 1729699
+      "start": 1728487,
+      "end": 1729830
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/skip/__load__.zeek",
-      "start": 1729699,
-      "end": 1729711
+      "start": 1729830,
+      "end": 1729842
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/skip/main.zeek",
-      "start": 1729711,
-      "end": 1729913
+      "start": 1729842,
+      "end": 1730044
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/snap/__load__.zeek",
-      "start": 1729913,
-      "end": 1729926
+      "start": 1730044,
+      "end": 1730057
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/snap/main.zeek",
-      "start": 1729926,
-      "end": 1730439
+      "start": 1730057,
+      "end": 1730570
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/tcp/__load__.zeek",
-      "start": 1730439,
-      "end": 1730451
+      "start": 1730570,
+      "end": 1730582
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/tcp/main.zeek",
-      "start": 1730451,
-      "end": 1730520
+      "start": 1730582,
+      "end": 1730651
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/teredo/__load__.zeek",
-      "start": 1730520,
-      "end": 1730532
+      "start": 1730651,
+      "end": 1730663
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/teredo/main.zeek",
-      "start": 1730532,
-      "end": 1731771
+      "start": 1730663,
+      "end": 1731902
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/udp/__load__.zeek",
-      "start": 1731771,
-      "end": 1731783
+      "start": 1731902,
+      "end": 1731914
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/udp/main.zeek",
-      "start": 1731783,
-      "end": 1731811
+      "start": 1731914,
+      "end": 1731942
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/vlan/__load__.zeek",
-      "start": 1731811,
-      "end": 1731823
+      "start": 1731942,
+      "end": 1731954
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/vlan/main.zeek",
-      "start": 1731823,
-      "end": 1733720
+      "start": 1731954,
+      "end": 1733851
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/vntag/__load__.zeek",
-      "start": 1733720,
-      "end": 1733732
+      "start": 1733851,
+      "end": 1733863
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/vntag/main.zeek",
-      "start": 1733732,
-      "end": 1734142
+      "start": 1733863,
+      "end": 1734273
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/vxlan/__load__.zeek",
-      "start": 1734142,
-      "end": 1734154
+      "start": 1734273,
+      "end": 1734285
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/packet-protocols/vxlan/main.zeek",
-      "start": 1734154,
-      "end": 1734949
+      "start": 1734285,
+      "end": 1735080
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/README",
-      "start": 1734949,
-      "end": 1735002
+      "start": 1735080,
+      "end": 1735133
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/__load__.zeek",
-      "start": 1735002,
-      "end": 1735108
+      "start": 1735133,
+      "end": 1735239
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/contents.zeek",
-      "start": 1735108,
-      "end": 1736681
+      "start": 1735239,
+      "end": 1736812
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/inactivity.zeek",
-      "start": 1736681,
-      "end": 1738042
+      "start": 1736812,
+      "end": 1738173
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/main.zeek",
-      "start": 1738042,
-      "end": 1749485
+      "start": 1738173,
+      "end": 1749616
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/polling.zeek",
-      "start": 1749485,
-      "end": 1751178
+      "start": 1749616,
+      "end": 1751309
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/removal-hooks.zeek",
-      "start": 1751178,
-      "end": 1753710
+      "start": 1751309,
+      "end": 1753841
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/conn/thresholds.zeek",
-      "start": 1753710,
-      "end": 1763758
+      "start": 1753841,
+      "end": 1763889
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dce-rpc/README",
-      "start": 1763758,
-      "end": 1763856
+      "start": 1763889,
+      "end": 1763987
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dce-rpc/__load__.zeek",
-      "start": 1763856,
-      "end": 1763905
+      "start": 1763987,
+      "end": 1764036
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dce-rpc/consts.zeek",
-      "start": 1763905,
-      "end": 1974844
+      "start": 1764036,
+      "end": 1974975
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dce-rpc/dpd.sig",
-      "start": 1974844,
-      "end": 1974926
+      "start": 1974975,
+      "end": 1975057
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dce-rpc/main.zeek",
-      "start": 1974926,
-      "end": 1983225
+      "start": 1975057,
+      "end": 1983356
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dhcp/README",
-      "start": 1983225,
-      "end": 1983290
+      "start": 1983356,
+      "end": 1983421
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dhcp/__load__.zeek",
-      "start": 1983290,
-      "end": 1983340
+      "start": 1983421,
+      "end": 1983471
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dhcp/consts.zeek",
-      "start": 1983340,
-      "end": 1988963
+      "start": 1983471,
+      "end": 1989094
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dhcp/dpd.sig",
-      "start": 1988963,
-      "end": 1989059
+      "start": 1989094,
+      "end": 1989190
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dhcp/main.zeek",
-      "start": 1989059,
-      "end": 1999778
+      "start": 1989190,
+      "end": 1999909
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dnp3/README",
-      "start": 1999778,
-      "end": 1999836
+      "start": 1999909,
+      "end": 1999967
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dnp3/__load__.zeek",
-      "start": 1999836,
-      "end": 1999871
+      "start": 1999967,
+      "end": 2000002
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dnp3/consts.zeek",
-      "start": 1999871,
-      "end": 2001107
+      "start": 2000002,
+      "end": 2001238
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dnp3/dpd.sig",
-      "start": 2001107,
-      "end": 2001354
+      "start": 2001238,
+      "end": 2001485
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dnp3/main.zeek",
-      "start": 2001354,
-      "end": 2003545
+      "start": 2001485,
+      "end": 2003676
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dns/README",
-      "start": 2003545,
-      "end": 2003601
+      "start": 2003676,
+      "end": 2003732
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dns/__load__.zeek",
-      "start": 2003601,
-      "end": 2003658
+      "start": 2003732,
+      "end": 2003789
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dns/check-event-handlers.zeek",
-      "start": 2003658,
-      "end": 2004333
+      "start": 2003789,
+      "end": 2004464
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dns/consts.zeek",
-      "start": 2004333,
-      "end": 2010744
+      "start": 2004464,
+      "end": 2010875
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/dns/main.zeek",
-      "start": 2010744,
-      "end": 2032640
+      "start": 2010875,
+      "end": 2032771
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/finger/__load__.zeek",
-      "start": 2032640,
-      "end": 2032674
+      "start": 2032771,
+      "end": 2032805
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/finger/main.zeek",
-      "start": 2032674,
-      "end": 2033004
+      "start": 2032805,
+      "end": 2033135
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/finger/spicy-events.zeek",
-      "start": 2033004,
-      "end": 2033941
+      "start": 2033135,
+      "end": 2034072
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/README",
-      "start": 2033941,
-      "end": 2033992
+      "start": 2034072,
+      "end": 2034123
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/__load__.zeek",
-      "start": 2033992,
-      "end": 2034107
+      "start": 2034123,
+      "end": 2034238
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/dpd.sig",
-      "start": 2034107,
-      "end": 2034496
+      "start": 2034238,
+      "end": 2034627
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/files.zeek",
-      "start": 2034496,
-      "end": 2036023
+      "start": 2034627,
+      "end": 2036154
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/gridftp.zeek",
-      "start": 2036023,
-      "end": 2040609
+      "start": 2036154,
+      "end": 2040740
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/info.zeek",
-      "start": 2040609,
-      "end": 2043292
+      "start": 2040740,
+      "end": 2043423
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/main.zeek",
-      "start": 2043292,
-      "end": 2058040
+      "start": 2043423,
+      "end": 2058171
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/utils-commands.zeek",
-      "start": 2058040,
-      "end": 2062993
+      "start": 2058171,
+      "end": 2063124
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ftp/utils.zeek",
-      "start": 2062993,
-      "end": 2064070
+      "start": 2063124,
+      "end": 2064201
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/README",
-      "start": 2064070,
-      "end": 2064127
+      "start": 2064201,
+      "end": 2064258
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/__load__.zeek",
-      "start": 2064127,
-      "end": 2064207
+      "start": 2064258,
+      "end": 2064338
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/dpd.sig",
-      "start": 2064207,
-      "end": 2065600
+      "start": 2064338,
+      "end": 2065731
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/entities.zeek",
-      "start": 2065600,
-      "end": 2071097
+      "start": 2065731,
+      "end": 2071228
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/files.zeek",
-      "start": 2071097,
-      "end": 2072545
+      "start": 2071228,
+      "end": 2072676
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/main.zeek",
-      "start": 2072545,
-      "end": 2085534
+      "start": 2072676,
+      "end": 2085665
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/http/utils.zeek",
-      "start": 2085534,
-      "end": 2087619
+      "start": 2085665,
+      "end": 2087750
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/imap/README",
-      "start": 2087619,
-      "end": 2087878
+      "start": 2087750,
+      "end": 2088009
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/imap/__load__.zeek",
-      "start": 2087878,
-      "end": 2087892
+      "start": 2088009,
+      "end": 2088023
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/imap/main.zeek",
-      "start": 2087892,
-      "end": 2088085
+      "start": 2088023,
+      "end": 2088216
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/irc/README",
-      "start": 2088085,
-      "end": 2088142
+      "start": 2088216,
+      "end": 2088273
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/irc/__load__.zeek",
-      "start": 2088142,
-      "end": 2088207
+      "start": 2088273,
+      "end": 2088338
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/irc/dcc-send.zeek",
-      "start": 2088207,
-      "end": 2092319
+      "start": 2088338,
+      "end": 2092450
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/irc/dpd.sig",
-      "start": 2092319,
-      "end": 2093193
+      "start": 2092450,
+      "end": 2093324
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/irc/files.zeek",
-      "start": 2093193,
-      "end": 2094340
+      "start": 2093324,
+      "end": 2094471
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/irc/main.zeek",
-      "start": 2094340,
-      "end": 2097403
+      "start": 2094471,
+      "end": 2097534
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/krb/README",
-      "start": 2097403,
-      "end": 2097443
+      "start": 2097534,
+      "end": 2097574
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/krb/__load__.zeek",
-      "start": 2097443,
-      "end": 2097490
+      "start": 2097574,
+      "end": 2097621
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/krb/consts.zeek",
-      "start": 2097490,
-      "end": 2100706
+      "start": 2097621,
+      "end": 2100837
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/krb/dpd.sig",
-      "start": 2100706,
-      "end": 2101360
+      "start": 2100837,
+      "end": 2101491
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/krb/files.zeek",
-      "start": 2101360,
-      "end": 2104634
+      "start": 2101491,
+      "end": 2104765
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/krb/main.zeek",
-      "start": 2104634,
-      "end": 2110669
+      "start": 2104765,
+      "end": 2110800
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ldap/__load__.zeek",
-      "start": 2110669,
-      "end": 2110787
+      "start": 2110800,
+      "end": 2110918
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ldap/consts.zeek",
-      "start": 2110787,
-      "end": 2118132
+      "start": 2110918,
+      "end": 2118263
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ldap/dpd.sig",
-      "start": 2118132,
-      "end": 2118581
+      "start": 2118263,
+      "end": 2118712
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ldap/main.zeek",
-      "start": 2118581,
-      "end": 2133209
+      "start": 2118712,
+      "end": 2133340
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ldap/spicy-events.zeek",
-      "start": 2133209,
-      "end": 2136720
+      "start": 2133340,
+      "end": 2136851
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/modbus/README",
-      "start": 2136720,
-      "end": 2136758
+      "start": 2136851,
+      "end": 2136889
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/modbus/__load__.zeek",
-      "start": 2136758,
-      "end": 2136785
+      "start": 2136889,
+      "end": 2136916
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/modbus/consts.zeek",
-      "start": 2136785,
-      "end": 2138706
+      "start": 2136916,
+      "end": 2138837
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/modbus/main.zeek",
-      "start": 2138706,
-      "end": 2141508
+      "start": 2138837,
+      "end": 2141639
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mqtt/README",
-      "start": 2141508,
-      "end": 2141544
+      "start": 2141639,
+      "end": 2141675
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mqtt/__load__.zeek",
-      "start": 2141544,
-      "end": 2141594
+      "start": 2141675,
+      "end": 2141725
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mqtt/consts.zeek",
-      "start": 2141594,
-      "end": 2142724
+      "start": 2141725,
+      "end": 2142855
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mqtt/dpd.sig",
-      "start": 2142724,
-      "end": 2142784
+      "start": 2142855,
+      "end": 2142915
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mqtt/main.zeek",
-      "start": 2142784,
-      "end": 2153285
+      "start": 2142915,
+      "end": 2153416
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mysql/README",
-      "start": 2153285,
-      "end": 2153322
+      "start": 2153416,
+      "end": 2153453
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mysql/__load__.zeek",
-      "start": 2153322,
-      "end": 2153335
+      "start": 2153453,
+      "end": 2153466
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mysql/consts.zeek",
-      "start": 2153335,
-      "end": 2154202
+      "start": 2153466,
+      "end": 2154333
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/mysql/main.zeek",
-      "start": 2154202,
-      "end": 2157874
+      "start": 2154333,
+      "end": 2158005
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ntlm/README",
-      "start": 2157874,
-      "end": 2157927
+      "start": 2158005,
+      "end": 2158058
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ntlm/__load__.zeek",
-      "start": 2157927,
-      "end": 2157939
+      "start": 2158058,
+      "end": 2158070
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ntlm/main.zeek",
-      "start": 2157939,
-      "end": 2161027
+      "start": 2158070,
+      "end": 2161158
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ntp/__load__.zeek",
-      "start": 2161027,
-      "end": 2161055
+      "start": 2161158,
+      "end": 2161186
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ntp/consts.zeek",
-      "start": 2161055,
-      "end": 2161454
+      "start": 2161186,
+      "end": 2161585
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ntp/main.zeek",
-      "start": 2161454,
-      "end": 2164987
+      "start": 2161585,
+      "end": 2165118
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/pop3/README",
-      "start": 2164987,
-      "end": 2165046
+      "start": 2165118,
+      "end": 2165177
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/pop3/__load__.zeek",
-      "start": 2165046,
-      "end": 2165068
+      "start": 2165177,
+      "end": 2165199
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/pop3/dpd.sig",
-      "start": 2165068,
-      "end": 2165433
+      "start": 2165199,
+      "end": 2165564
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/postgresql/__load__.zeek",
-      "start": 2165433,
-      "end": 2165537
+      "start": 2165564,
+      "end": 2165668
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/postgresql/consts.zeek",
-      "start": 2165537,
-      "end": 2166506
+      "start": 2165668,
+      "end": 2166637
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/postgresql/dpd.sig",
-      "start": 2166506,
-      "end": 2167506
+      "start": 2166637,
+      "end": 2167637
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/postgresql/main.zeek",
-      "start": 2167506,
-      "end": 2173750
+      "start": 2167637,
+      "end": 2173881
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/postgresql/spicy-events.zeek",
-      "start": 2173750,
-      "end": 2178168
+      "start": 2173881,
+      "end": 2178299
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/quic/__load__.zeek",
-      "start": 2178168,
-      "end": 2178259
+      "start": 2178299,
+      "end": 2178390
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/quic/consts.zeek",
-      "start": 2178259,
-      "end": 2179239
+      "start": 2178390,
+      "end": 2179370
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/quic/main.zeek",
-      "start": 2179239,
-      "end": 2187562
+      "start": 2179370,
+      "end": 2187693
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/quic/spicy-events.zeek",
-      "start": 2187562,
-      "end": 2191221
+      "start": 2187693,
+      "end": 2191352
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/radius/README",
-      "start": 2191221,
-      "end": 2191259
+      "start": 2191352,
+      "end": 2191390
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/radius/__load__.zeek",
-      "start": 2191259,
-      "end": 2191272
+      "start": 2191390,
+      "end": 2191403
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/radius/consts.zeek",
-      "start": 2191272,
-      "end": 2198226
+      "start": 2191403,
+      "end": 2198357
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/radius/main.zeek",
-      "start": 2198226,
-      "end": 2202634
+      "start": 2198357,
+      "end": 2202765
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rdp/README",
-      "start": 2202634,
-      "end": 2202686
+      "start": 2202765,
+      "end": 2202817
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rdp/__load__.zeek",
-      "start": 2202686,
-      "end": 2202735
+      "start": 2202817,
+      "end": 2202866
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rdp/consts.zeek",
-      "start": 2202735,
-      "end": 2215935
+      "start": 2202866,
+      "end": 2216066
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rdp/dpd.sig",
-      "start": 2215935,
-      "end": 2216346
+      "start": 2216066,
+      "end": 2216477
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rdp/main.zeek",
-      "start": 2216346,
-      "end": 2225204
+      "start": 2216477,
+      "end": 2225335
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/redis/__load__.zeek",
-      "start": 2225204,
-      "end": 2225298
+      "start": 2225335,
+      "end": 2225429
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/redis/dpd.sig",
-      "start": 2225298,
-      "end": 2225617
+      "start": 2225429,
+      "end": 2225748
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/redis/main.zeek",
-      "start": 2225617,
-      "end": 2235505
+      "start": 2225748,
+      "end": 2235636
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/redis/spicy-events.zeek",
-      "start": 2235505,
-      "end": 2239607
+      "start": 2235636,
+      "end": 2239738
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rfb/README",
-      "start": 2239607,
-      "end": 2239679
+      "start": 2239738,
+      "end": 2239810
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rfb/__load__.zeek",
-      "start": 2239679,
-      "end": 2239745
+      "start": 2239810,
+      "end": 2239876
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rfb/dpd.sig",
-      "start": 2239745,
-      "end": 2239970
+      "start": 2239876,
+      "end": 2240101
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/rfb/main.zeek",
-      "start": 2239970,
-      "end": 2243730
+      "start": 2240101,
+      "end": 2243861
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/sip/README",
-      "start": 2243730,
-      "end": 2243786
+      "start": 2243861,
+      "end": 2243917
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/sip/__load__.zeek",
-      "start": 2243786,
-      "end": 2243820
+      "start": 2243917,
+      "end": 2243951
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/sip/dpd.sig",
-      "start": 2243820,
-      "end": 2244240
+      "start": 2243951,
+      "end": 2244371
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/sip/main.zeek",
-      "start": 2244240,
-      "end": 2253248
+      "start": 2244371,
+      "end": 2253379
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/README",
-      "start": 2253248,
-      "end": 2253283
+      "start": 2253379,
+      "end": 2253414
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/__load__.zeek",
-      "start": 2253283,
-      "end": 2253432
+      "start": 2253414,
+      "end": 2253563
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/const-dos-error.zeek",
-      "start": 2253432,
-      "end": 2264123
+      "start": 2253563,
+      "end": 2264254
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/const-nt-status.zeek",
-      "start": 2264123,
-      "end": 2511197
+      "start": 2264254,
+      "end": 2511328
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/consts.zeek",
-      "start": 2511197,
-      "end": 2519211
+      "start": 2511328,
+      "end": 2519342
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/dpd.sig",
-      "start": 2519211,
-      "end": 2519293
+      "start": 2519342,
+      "end": 2519424
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/files.zeek",
-      "start": 2519293,
-      "end": 2521636
+      "start": 2519424,
+      "end": 2521767
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/main.zeek",
-      "start": 2521636,
-      "end": 2529424
+      "start": 2521767,
+      "end": 2529555
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/smb1-main.zeek",
-      "start": 2529424,
-      "end": 2538345
+      "start": 2529555,
+      "end": 2538476
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smb/smb2-main.zeek",
-      "start": 2538345,
-      "end": 2549424
+      "start": 2538476,
+      "end": 2549555
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smtp/README",
-      "start": 2549424,
-      "end": 2549483
+      "start": 2549555,
+      "end": 2549614
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smtp/__load__.zeek",
-      "start": 2549483,
-      "end": 2549548
+      "start": 2549614,
+      "end": 2549679
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smtp/dpd.sig",
-      "start": 2549548,
-      "end": 2549862
+      "start": 2549679,
+      "end": 2549993
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smtp/entities.zeek",
-      "start": 2549862,
-      "end": 2551635
+      "start": 2549993,
+      "end": 2551766
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smtp/files.zeek",
-      "start": 2551635,
-      "end": 2554149
+      "start": 2551766,
+      "end": 2554280
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/smtp/main.zeek",
-      "start": 2554149,
-      "end": 2566901
+      "start": 2554280,
+      "end": 2567032
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/snmp/README",
-      "start": 2566901,
-      "end": 2566965
+      "start": 2567032,
+      "end": 2567096
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/snmp/__load__.zeek",
-      "start": 2566965,
-      "end": 2566978
+      "start": 2567096,
+      "end": 2567109
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/snmp/main.zeek",
-      "start": 2566978,
-      "end": 2572675
+      "start": 2567109,
+      "end": 2572806
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/socks/README",
-      "start": 2572675,
-      "end": 2572728
+      "start": 2572806,
+      "end": 2572859
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/socks/__load__.zeek",
-      "start": 2572728,
-      "end": 2572777
+      "start": 2572859,
+      "end": 2572908
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/socks/consts.zeek",
-      "start": 2572777,
-      "end": 2574124
+      "start": 2572908,
+      "end": 2574255
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/socks/dpd.sig",
-      "start": 2574124,
-      "end": 2575905
+      "start": 2574255,
+      "end": 2576036
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/socks/main.zeek",
-      "start": 2575905,
-      "end": 2579954
+      "start": 2576036,
+      "end": 2580085
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssh/README",
-      "start": 2579954,
-      "end": 2579989
+      "start": 2580085,
+      "end": 2580120
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssh/__load__.zeek",
-      "start": 2579989,
-      "end": 2580023
+      "start": 2580120,
+      "end": 2580154
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssh/dpd.sig",
-      "start": 2580023,
-      "end": 2580287
+      "start": 2580154,
+      "end": 2580418
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssh/main.zeek",
-      "start": 2580287,
-      "end": 2592910
+      "start": 2580418,
+      "end": 2593041
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/README",
-      "start": 2592910,
-      "end": 2592998
+      "start": 2593041,
+      "end": 2593129
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/__load__.zeek",
-      "start": 2592998,
-      "end": 2593102
+      "start": 2593129,
+      "end": 2593233
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/consts.zeek",
-      "start": 2593102,
-      "end": 2661576
+      "start": 2593233,
+      "end": 2661707
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/ct-list.zeek",
-      "start": 2661576,
-      "end": 2694039
+      "start": 2661707,
+      "end": 2694170
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/dpd.sig",
-      "start": 2694039,
-      "end": 2694646
+      "start": 2694170,
+      "end": 2694777
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/files.zeek",
-      "start": 2694646,
-      "end": 2700764
+      "start": 2694777,
+      "end": 2700895
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/main.zeek",
-      "start": 2700764,
-      "end": 2718249
+      "start": 2700895,
+      "end": 2718380
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/ssl/mozilla-ca-list.zeek",
-      "start": 2718249,
-      "end": 3346348
+      "start": 2718380,
+      "end": 3346479
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/syslog/README",
-      "start": 3346348,
-      "end": 3346386
+      "start": 3346479,
+      "end": 3346517
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/syslog/__load__.zeek",
-      "start": 3346386,
-      "end": 3346435
+      "start": 3346517,
+      "end": 3346566
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/syslog/consts.zeek",
-      "start": 3346435,
-      "end": 3347517
+      "start": 3346566,
+      "end": 3347648
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/syslog/main.zeek",
-      "start": 3347517,
-      "end": 3349199
+      "start": 3347648,
+      "end": 3349330
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/syslog/spicy-events.zeek",
-      "start": 3349199,
-      "end": 3349878
+      "start": 3349330,
+      "end": 3350009
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/tunnels/README",
-      "start": 3349878,
-      "end": 3349970
+      "start": 3350009,
+      "end": 3350101
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/tunnels/__load__.zeek",
-      "start": 3349970,
-      "end": 3349990
+      "start": 3350101,
+      "end": 3350121
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/tunnels/dpd.sig",
-      "start": 3349990,
-      "end": 3350085
+      "start": 3350121,
+      "end": 3350216
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/websocket/__load__.zeek",
-      "start": 3350085,
-      "end": 3350123
+      "start": 3350216,
+      "end": 3350254
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/websocket/consts.zeek",
-      "start": 3350123,
-      "end": 3350803
+      "start": 3350254,
+      "end": 3350934
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/websocket/main.zeek",
-      "start": 3350803,
-      "end": 3357495
+      "start": 3350934,
+      "end": 3357626
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/xmpp/README",
-      "start": 3357495,
-      "end": 3357782
+      "start": 3357626,
+      "end": 3357913
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/xmpp/__load__.zeek",
-      "start": 3357782,
-      "end": 3357817
+      "start": 3357913,
+      "end": 3357948
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/xmpp/dpd.sig",
-      "start": 3357817,
-      "end": 3357945
+      "start": 3357948,
+      "end": 3358076
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/protocols/xmpp/main.zeek",
-      "start": 3357945,
-      "end": 3358149
+      "start": 3358076,
+      "end": 3358280
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/active-http.zeek",
-      "start": 3358149,
-      "end": 3362397
+      "start": 3358280,
+      "end": 3362528
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/addrs.zeek",
-      "start": 3362397,
-      "end": 3368814
+      "start": 3362528,
+      "end": 3368945
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/backtrace.zeek",
-      "start": 3368814,
-      "end": 3370509
+      "start": 3368945,
+      "end": 3370640
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/conn-ids.zeek",
-      "start": 3370509,
-      "end": 3371909
+      "start": 3370640,
+      "end": 3372040
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/dir.zeek",
-      "start": 3371909,
-      "end": 3373857
+      "start": 3372040,
+      "end": 3373988
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/directions-and-hosts.zeek",
-      "start": 3373857,
-      "end": 3375715
+      "start": 3373988,
+      "end": 3375846
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/email.zeek",
-      "start": 3375715,
-      "end": 3377890
+      "start": 3375846,
+      "end": 3378021
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/exec.zeek",
-      "start": 3377890,
-      "end": 3383580
+      "start": 3378021,
+      "end": 3383711
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/files.zeek",
-      "start": 3383580,
-      "end": 3384887
+      "start": 3383711,
+      "end": 3385018
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/geoip-distance.zeek",
-      "start": 3384887,
-      "end": 3385745
+      "start": 3385018,
+      "end": 3385876
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/hash_hrw.zeek",
-      "start": 3385745,
-      "end": 3387569
+      "start": 3385876,
+      "end": 3387700
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/numbers.zeek",
-      "start": 3387569,
-      "end": 3388257
+      "start": 3387700,
+      "end": 3388388
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/packages.zeek",
-      "start": 3388257,
-      "end": 3388736
+      "start": 3388388,
+      "end": 3388867
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/paths.zeek",
-      "start": 3388736,
-      "end": 3390197
+      "start": 3388867,
+      "end": 3390328
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/patterns.zeek",
-      "start": 3390197,
-      "end": 3392349
+      "start": 3390328,
+      "end": 3392480
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/queue.zeek",
-      "start": 3392349,
-      "end": 3395832
+      "start": 3392480,
+      "end": 3395963
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/site.zeek",
-      "start": 3395832,
-      "end": 3407893
+      "start": 3395963,
+      "end": 3408024
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/strings.zeek",
-      "start": 3407893,
-      "end": 3409147
+      "start": 3408024,
+      "end": 3409278
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/thresholds.zeek",
-      "start": 3409147,
-      "end": 3411156
+      "start": 3409278,
+      "end": 3411287
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/time.zeek",
-      "start": 3411156,
-      "end": 3412194
+      "start": 3411287,
+      "end": 3412325
     }, {
       "filename": "/usr/local/zeek/share/zeek/base/utils/urls.zeek",
-      "start": 3412194,
-      "end": 3415630
+      "start": 3412325,
+      "end": 3415761
     }, {
       "filename": "/usr/local/zeek/share/zeek/builtin-plugins/__load__.zeek",
-      "start": 3415630,
-      "end": 3415672
+      "start": 3415761,
+      "end": 3415803
     }, {
       "filename": "/usr/local/zeek/share/zeek/builtin-plugins/__preload__.zeek",
-      "start": 3415672,
-      "end": 3415714
+      "start": 3415803,
+      "end": 3415845
     }, {
       "filename": "/usr/local/zeek/share/zeek/cmake_install.cmake",
-      "start": 3415714,
-      "end": 3419871
+      "start": 3415845,
+      "end": 3420002
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/files/x509/disable-certificate-events-known-certs.zeek",
-      "start": 3419871,
-      "end": 3422900
+      "start": 3420002,
+      "end": 3423031
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/analyzer/debug-logging.zeek",
-      "start": 3422900,
-      "end": 3429179
+      "start": 3423031,
+      "end": 3429310
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/analyzer/detect-protocols.zeek",
-      "start": 3429179,
-      "end": 3436439
+      "start": 3429310,
+      "end": 3436570
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/analyzer/packet-segment-logging.zeek",
-      "start": 3436439,
-      "end": 3438014
+      "start": 3436570,
+      "end": 3438145
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/broker/__load__.zeek",
-      "start": 3438014,
-      "end": 3438067
+      "start": 3438145,
+      "end": 3438198
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/broker/backpressure.zeek",
-      "start": 3438067,
-      "end": 3439168
+      "start": 3438198,
+      "end": 3439299
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/broker/main.zeek",
-      "start": 3439168,
-      "end": 3443397
+      "start": 3439299,
+      "end": 3443528
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/broker/telemetry.zeek",
-      "start": 3443397,
-      "end": 3447288
+      "start": 3443528,
+      "end": 3447419
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/zeromq/__load__.zeek",
-      "start": 3447288,
-      "end": 3447306
+      "start": 3447419,
+      "end": 3447437
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/zeromq/connect.zeek",
-      "start": 3447306,
-      "end": 3447525
+      "start": 3447437,
+      "end": 3447656
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/backend/zeromq/main.zeek",
-      "start": 3447525,
-      "end": 3469927
+      "start": 3447656,
+      "end": 3470058
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/experimental.zeek",
-      "start": 3469927,
-      "end": 3476341
+      "start": 3470058,
+      "end": 3476472
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/nodes-experimental/manager.zeek",
-      "start": 3476341,
-      "end": 3478432
+      "start": 3476472,
+      "end": 3478563
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/cluster/websocket/server.zeek",
-      "start": 3478432,
-      "end": 3480449
+      "start": 3478563,
+      "end": 3480580
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/conn_key/vlan_fivetuple.zeek",
-      "start": 3480449,
-      "end": 3480988
+      "start": 3480580,
+      "end": 3481119
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/control/controllee.zeek",
-      "start": 3480988,
-      "end": 3483723
+      "start": 3481119,
+      "end": 3483854
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/control/controller.zeek",
-      "start": 3483723,
-      "end": 3486990
+      "start": 3483854,
+      "end": 3487121
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/files/detect-MHR.zeek",
-      "start": 3486990,
-      "end": 3489687
+      "start": 3487121,
+      "end": 3489818
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/files/entropy-test-all-files.zeek",
-      "start": 3489687,
-      "end": 3490069
+      "start": 3489818,
+      "end": 3490200
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/files/extract-all-files.zeek",
-      "start": 3490069,
-      "end": 3490210
+      "start": 3490200,
+      "end": 3490341
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/files/hash-all-files.zeek",
-      "start": 3490210,
-      "end": 3490465
+      "start": 3490341,
+      "end": 3490596
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/do_expire.zeek",
-      "start": 3490465,
-      "end": 3490758
+      "start": 3490596,
+      "end": 3490889
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/do_notice.zeek",
-      "start": 3490758,
-      "end": 3492630
+      "start": 3490889,
+      "end": 3492761
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/removal.zeek",
-      "start": 3492630,
-      "end": 3493006
+      "start": 3492761,
+      "end": 3493137
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/README",
-      "start": 3493006,
-      "end": 3493060
+      "start": 3493137,
+      "end": 3493191
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/__load__.zeek",
-      "start": 3493060,
-      "end": 3493284
+      "start": 3493191,
+      "end": 3493415
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/conn-established.zeek",
-      "start": 3493284,
-      "end": 3493632
+      "start": 3493415,
+      "end": 3493763
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/dns.zeek",
-      "start": 3493632,
-      "end": 3493989
+      "start": 3493763,
+      "end": 3494120
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/file-hashes.zeek",
-      "start": 3493989,
-      "end": 3494335
+      "start": 3494120,
+      "end": 3494466
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/file-names.zeek",
-      "start": 3494335,
-      "end": 3495351
+      "start": 3494466,
+      "end": 3495482
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/http-headers.zeek",
-      "start": 3495351,
-      "end": 3497516
+      "start": 3495482,
+      "end": 3497647
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/http-url.zeek",
-      "start": 3497516,
-      "end": 3497933
+      "start": 3497647,
+      "end": 3498064
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/manage-event-groups.zeek",
-      "start": 3497933,
-      "end": 3499835
+      "start": 3498064,
+      "end": 3499966
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/pubkey-hashes.zeek",
-      "start": 3499835,
-      "end": 3500158
+      "start": 3499966,
+      "end": 3500289
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/smb-filenames.zeek",
-      "start": 3500158,
-      "end": 3500912
+      "start": 3500289,
+      "end": 3501043
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/smtp-url-extraction.zeek",
-      "start": 3500912,
-      "end": 3501610
+      "start": 3501043,
+      "end": 3501741
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/smtp.zeek",
-      "start": 3501610,
-      "end": 3504300
+      "start": 3501741,
+      "end": 3504431
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/ssl.zeek",
-      "start": 3504300,
-      "end": 3505186
+      "start": 3504431,
+      "end": 3505317
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/where-locations.zeek",
-      "start": 3505186,
-      "end": 3505803
+      "start": 3505317,
+      "end": 3505934
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/seen/x509.zeek",
-      "start": 3505803,
-      "end": 3507546
+      "start": 3505934,
+      "end": 3507677
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/intel/whitelist.zeek",
-      "start": 3507546,
-      "end": 3508055
+      "start": 3507677,
+      "end": 3508186
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/__load__.zeek",
-      "start": 3508055,
-      "end": 3508466
+      "start": 3508186,
+      "end": 3508597
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/agent/__load__.zeek",
-      "start": 3508466,
-      "end": 3509140
+      "start": 3508597,
+      "end": 3509271
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/agent/api.zeek",
-      "start": 3509140,
-      "end": 3517833
+      "start": 3509271,
+      "end": 3517964
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/agent/boot.zeek",
-      "start": 3517833,
-      "end": 3520126
+      "start": 3517964,
+      "end": 3520257
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/agent/config.zeek",
-      "start": 3520126,
-      "end": 3525484
+      "start": 3520257,
+      "end": 3525615
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/agent/main.zeek",
-      "start": 3525484,
-      "end": 3562783
+      "start": 3525615,
+      "end": 3562914
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/config.zeek",
-      "start": 3562783,
-      "end": 3565169
+      "start": 3562914,
+      "end": 3565300
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/controller/__load__.zeek",
-      "start": 3565169,
-      "end": 3565820
+      "start": 3565300,
+      "end": 3565951
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/controller/api.zeek",
-      "start": 3565820,
-      "end": 3576334
+      "start": 3565951,
+      "end": 3576465
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/controller/boot.zeek",
-      "start": 3576334,
-      "end": 3578148
+      "start": 3576465,
+      "end": 3578279
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/controller/config.zeek",
-      "start": 3578148,
-      "end": 3585381
+      "start": 3578279,
+      "end": 3585512
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/controller/main.zeek",
-      "start": 3585381,
-      "end": 3641700
+      "start": 3585512,
+      "end": 3641831
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/log.zeek",
-      "start": 3641700,
-      "end": 3645684
+      "start": 3641831,
+      "end": 3645815
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/node/__load__.zeek",
-      "start": 3645684,
-      "end": 3645697
+      "start": 3645815,
+      "end": 3645828
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/node/api.zeek",
-      "start": 3645697,
-      "end": 3647748
+      "start": 3645828,
+      "end": 3647879
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/node/config.zeek",
-      "start": 3647748,
-      "end": 3648609
+      "start": 3647879,
+      "end": 3648740
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/node/main.zeek",
-      "start": 3648609,
-      "end": 3652628
+      "start": 3648740,
+      "end": 3652759
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/persistence.zeek",
-      "start": 3652628,
-      "end": 3654230
+      "start": 3652759,
+      "end": 3654361
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/request.zeek",
-      "start": 3654230,
-      "end": 3659554
+      "start": 3654361,
+      "end": 3659685
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/supervisor/__load__.zeek",
-      "start": 3659554,
-      "end": 3659567
+      "start": 3659685,
+      "end": 3659698
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/supervisor/api.zeek",
-      "start": 3659567,
-      "end": 3660217
+      "start": 3659698,
+      "end": 3660348
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/supervisor/config.zeek",
-      "start": 3660217,
-      "end": 3661255
+      "start": 3660348,
+      "end": 3661386
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/supervisor/main.zeek",
-      "start": 3661255,
-      "end": 3664652
+      "start": 3661386,
+      "end": 3664783
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/types.zeek",
-      "start": 3664652,
-      "end": 3671117
+      "start": 3664783,
+      "end": 3671248
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/management/util.zeek",
-      "start": 3671117,
-      "end": 3671634
+      "start": 3671248,
+      "end": 3671765
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/netcontrol/catch-and-release.zeek",
-      "start": 3671634,
-      "end": 3690086
+      "start": 3671765,
+      "end": 3690217
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/notice/__load__.zeek",
-      "start": 3690086,
-      "end": 3690268
+      "start": 3690217,
+      "end": 3690399
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/notice/actions/drop.zeek",
-      "start": 3690268,
-      "end": 3691115
+      "start": 3690399,
+      "end": 3691246
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/notice/community-id.zeek",
-      "start": 3691115,
-      "end": 3691937
+      "start": 3691246,
+      "end": 3692068
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/notice/extend-email/hostnames.zeek",
-      "start": 3691937,
-      "end": 3693764
+      "start": 3692068,
+      "end": 3693895
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/packet-filter/shunt.zeek",
-      "start": 3693764,
-      "end": 3698584
+      "start": 3693895,
+      "end": 3698715
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/signatures/detect-windows-shells.sig",
-      "start": 3698584,
-      "end": 3699060
+      "start": 3698715,
+      "end": 3699191
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/signatures/iso-9660.sig",
-      "start": 3699060,
-      "end": 3699465
+      "start": 3699191,
+      "end": 3699596
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/signatures/iso-9660.zeek",
-      "start": 3699465,
-      "end": 3699754
+      "start": 3699596,
+      "end": 3699885
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/software/version-changes.zeek",
-      "start": 3699754,
-      "end": 3701051
+      "start": 3699885,
+      "end": 3701182
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/software/vulnerable.zeek",
-      "start": 3701051,
-      "end": 3705458
+      "start": 3701182,
+      "end": 3705589
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/software/windows-version-detection.zeek",
-      "start": 3705458,
-      "end": 3711046
+      "start": 3705589,
+      "end": 3711177
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/spicy/record-spicy-batch.zeek",
-      "start": 3711046,
-      "end": 3713109
+      "start": 3711177,
+      "end": 3713240
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/spicy/resource-usage.zeek",
-      "start": 3713109,
-      "end": 3713613
+      "start": 3713240,
+      "end": 3713744
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/storage/backend/redis/__load__.zeek",
-      "start": 3713613,
-      "end": 3713630
+      "start": 3713744,
+      "end": 3713761
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/storage/backend/redis/main.zeek",
-      "start": 3713630,
-      "end": 3715578
+      "start": 3713761,
+      "end": 3715709
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/storage/backend/sqlite/__load__.zeek",
-      "start": 3715578,
-      "end": 3715595
+      "start": 3715709,
+      "end": 3715726
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/storage/backend/sqlite/main.zeek",
-      "start": 3715595,
-      "end": 3717837
+      "start": 3715726,
+      "end": 3717968
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/frameworks/telemetry/log.zeek",
-      "start": 3717837,
-      "end": 3723277
+      "start": 3717968,
+      "end": 3723408
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/integration/collective-intel/README",
-      "start": 3723277,
-      "end": 3723508
+      "start": 3723408,
+      "end": 3723639
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/integration/collective-intel/__load__.zeek",
-      "start": 3723508,
-      "end": 3723520
+      "start": 3723639,
+      "end": 3723651
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/integration/collective-intel/main.zeek",
-      "start": 3723520,
-      "end": 3725414
+      "start": 3723651,
+      "end": 3725545
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/capture-loss.zeek",
-      "start": 3725414,
-      "end": 3729342
+      "start": 3725545,
+      "end": 3729473
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/detect-traceroute/README",
-      "start": 3729342,
-      "end": 3729384
+      "start": 3729473,
+      "end": 3729515
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/detect-traceroute/__load__.zeek",
-      "start": 3729384,
-      "end": 3729396
+      "start": 3729515,
+      "end": 3729527
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/detect-traceroute/detect-low-ttls.sig",
-      "start": 3729396,
-      "end": 3729544
+      "start": 3729527,
+      "end": 3729675
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/detect-traceroute/main.zeek",
-      "start": 3729544,
-      "end": 3733499
+      "start": 3729675,
+      "end": 3733630
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/dump-events.zeek",
-      "start": 3733499,
-      "end": 3735308
+      "start": 3733630,
+      "end": 3735439
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/loaded-scripts.zeek",
-      "start": 3735308,
-      "end": 3736206
+      "start": 3735439,
+      "end": 3736337
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/profiling.zeek",
-      "start": 3736206,
-      "end": 3736771
+      "start": 3736337,
+      "end": 3736902
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/stats.zeek",
-      "start": 3736771,
-      "end": 3745283
+      "start": 3736902,
+      "end": 3745414
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/systemd-generator.zeek",
-      "start": 3745283,
-      "end": 3745982
+      "start": 3745414,
+      "end": 3746113
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/trim-trace-file.zeek",
-      "start": 3745982,
-      "end": 3747009
+      "start": 3746113,
+      "end": 3747140
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/unknown-protocols.zeek",
-      "start": 3747009,
-      "end": 3748778
+      "start": 3747140,
+      "end": 3748909
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/misc/weird-stats.zeek",
-      "start": 3748778,
-      "end": 3751578
+      "start": 3748909,
+      "end": 3751709
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/community-id-logging.zeek",
-      "start": 3751578,
-      "end": 3752164
+      "start": 3751709,
+      "end": 3752295
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/disable-unknown-ip-proto-support.zeek",
-      "start": 3752164,
-      "end": 3752503
+      "start": 3752295,
+      "end": 3752634
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/failed-service-logging.zeek",
-      "start": 3752503,
-      "end": 3753739
+      "start": 3752634,
+      "end": 3753870
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/ip-proto-name-logging.zeek",
-      "start": 3753739,
-      "end": 3754307
+      "start": 3753870,
+      "end": 3754438
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/known-hosts.zeek",
-      "start": 3754307,
-      "end": 3759091
+      "start": 3754438,
+      "end": 3759222
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/known-services.zeek",
-      "start": 3759091,
-      "end": 3771252
+      "start": 3759222,
+      "end": 3771383
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/mac-logging.zeek",
-      "start": 3771252,
-      "end": 3771974
+      "start": 3771383,
+      "end": 3772105
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/pppoe-session-id-logging.zeek",
-      "start": 3771974,
-      "end": 3772552
+      "start": 3772105,
+      "end": 3772683
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/speculative-service.zeek",
-      "start": 3772552,
-      "end": 3773603
+      "start": 3772683,
+      "end": 3773734
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/vlan-logging.zeek",
-      "start": 3773603,
-      "end": 3774266
+      "start": 3773734,
+      "end": 3774397
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/conn/weirds.zeek",
-      "start": 3774266,
-      "end": 3775452
+      "start": 3774397,
+      "end": 3775583
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dhcp/msg-orig.zeek",
-      "start": 3775452,
-      "end": 3776067
+      "start": 3775583,
+      "end": 3776198
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dhcp/software.zeek",
-      "start": 3776067,
-      "end": 3778142
+      "start": 3776198,
+      "end": 3778273
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dhcp/sub-opts.zeek",
-      "start": 3778142,
-      "end": 3779444
+      "start": 3778273,
+      "end": 3779575
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dns/auth-addl.zeek",
-      "start": 3779444,
-      "end": 3780614
+      "start": 3779575,
+      "end": 3780745
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dns/detect-external-names.zeek",
-      "start": 3780614,
-      "end": 3782240
+      "start": 3780745,
+      "end": 3782371
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dns/disable-opcode-log-fields.zeek",
-      "start": 3782240,
-      "end": 3782430
+      "start": 3782371,
+      "end": 3782561
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/dns/log-original-query-case.zeek",
-      "start": 3782430,
-      "end": 3782935
+      "start": 3782561,
+      "end": 3783066
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ftp/detect-bruteforcing.zeek",
-      "start": 3782935,
-      "end": 3784932
+      "start": 3783066,
+      "end": 3785063
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ftp/detect.zeek",
-      "start": 3784932,
-      "end": 3785765
+      "start": 3785063,
+      "end": 3785896
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ftp/software.zeek",
-      "start": 3785765,
-      "end": 3786400
+      "start": 3785896,
+      "end": 3786531
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/detect-sql-injection.zeek",
-      "start": 3786400,
-      "end": 3791714
+      "start": 3786531,
+      "end": 3791845
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/detect-webapps.sig",
-      "start": 3791714,
-      "end": 3794157
+      "start": 3791845,
+      "end": 3794288
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/detect-webapps.zeek",
-      "start": 3794157,
-      "end": 3795887
+      "start": 3794288,
+      "end": 3796018
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/header-names.zeek",
-      "start": 3795887,
-      "end": 3797250
+      "start": 3796018,
+      "end": 3797381
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/software-browser-plugins.zeek",
-      "start": 3797250,
-      "end": 3799780
+      "start": 3797381,
+      "end": 3799911
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/software.zeek",
-      "start": 3799780,
-      "end": 3801130
+      "start": 3799911,
+      "end": 3801261
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/var-extraction-cookies.zeek",
-      "start": 3801130,
-      "end": 3801589
+      "start": 3801261,
+      "end": 3801720
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/http/var-extraction-uri.zeek",
-      "start": 3801589,
-      "end": 3802127
+      "start": 3801720,
+      "end": 3802258
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/krb/md5-ticket-logging.zeek",
-      "start": 3802127,
-      "end": 3802883
+      "start": 3802258,
+      "end": 3803014
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/krb/ticket-logging.zeek",
-      "start": 3802883,
-      "end": 3803759
+      "start": 3803014,
+      "end": 3803890
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/modbus/known-masters-slaves.zeek",
-      "start": 3803759,
-      "end": 3805489
+      "start": 3803890,
+      "end": 3805620
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/modbus/track-memmap.zeek",
-      "start": 3805489,
-      "end": 3808871
+      "start": 3805620,
+      "end": 3809002
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/mysql/software.zeek",
-      "start": 3808871,
-      "end": 3809295
+      "start": 3809002,
+      "end": 3809426
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/rdp/indicate_ssl.zeek",
-      "start": 3809295,
-      "end": 3809691
+      "start": 3809426,
+      "end": 3809822
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/smb/log-cmds.zeek",
-      "start": 3809691,
-      "end": 3811716
+      "start": 3809822,
+      "end": 3811847
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/smtp/blocklists.zeek",
-      "start": 3811716,
-      "end": 3813599
+      "start": 3811847,
+      "end": 3813730
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/smtp/detect-suspicious-orig.zeek",
-      "start": 3813599,
-      "end": 3815074
+      "start": 3813730,
+      "end": 3815205
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/smtp/entities-excerpt.zeek",
-      "start": 3815074,
-      "end": 3815903
+      "start": 3815205,
+      "end": 3816034
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/smtp/software.zeek",
-      "start": 3815903,
-      "end": 3818753
+      "start": 3816034,
+      "end": 3818884
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssh/detect-bruteforcing.zeek",
-      "start": 3818753,
-      "end": 3821707
+      "start": 3818884,
+      "end": 3821838
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssh/geo-data.zeek",
-      "start": 3821707,
-      "end": 3823303
+      "start": 3821838,
+      "end": 3823434
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssh/interesting-hostnames.zeek",
-      "start": 3823303,
-      "end": 3824950
+      "start": 3823434,
+      "end": 3825081
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssh/md5-host-key-logging.zeek",
-      "start": 3824950,
-      "end": 3825276
+      "start": 3825081,
+      "end": 3825407
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssh/software.zeek",
-      "start": 3825276,
-      "end": 3826311
+      "start": 3825407,
+      "end": 3826442
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/certificate-request-info.zeek",
-      "start": 3826311,
-      "end": 3827100
+      "start": 3826442,
+      "end": 3827231
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/decryption.zeek",
-      "start": 3827100,
-      "end": 3830747
+      "start": 3827231,
+      "end": 3830878
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/dpd-v2.sig",
-      "start": 3830747,
-      "end": 3831297
+      "start": 3830878,
+      "end": 3831428
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/expiring-certs.zeek",
-      "start": 3831297,
-      "end": 3834203
+      "start": 3831428,
+      "end": 3834334
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/heartbleed.zeek",
-      "start": 3834203,
-      "end": 3844173
+      "start": 3834334,
+      "end": 3844304
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/known-certs.zeek",
-      "start": 3844173,
-      "end": 3849794
+      "start": 3844304,
+      "end": 3849925
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/log-certs-base64.zeek",
-      "start": 3849794,
-      "end": 3850466
+      "start": 3849925,
+      "end": 3850597
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/log-hostcerts-only.zeek",
-      "start": 3850466,
-      "end": 3850806
+      "start": 3850597,
+      "end": 3850937
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/ssl-log-ext.zeek",
-      "start": 3850806,
-      "end": 3855862
+      "start": 3850937,
+      "end": 3855993
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/validate-certs.zeek",
-      "start": 3855862,
-      "end": 3862346
+      "start": 3855993,
+      "end": 3862477
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/validate-ocsp.zeek",
-      "start": 3862346,
-      "end": 3864597
+      "start": 3862477,
+      "end": 3864728
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/validate-sct.zeek",
-      "start": 3864597,
-      "end": 3872103
+      "start": 3864728,
+      "end": 3872234
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/protocols/ssl/weak-keys.zeek",
-      "start": 3872103,
-      "end": 3877767
+      "start": 3872234,
+      "end": 3877898
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/tuning/README",
-      "start": 3877767,
-      "end": 3877800
+      "start": 3877898,
+      "end": 3877931
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/tuning/json-logs.zeek",
-      "start": 3877800,
-      "end": 3877915
+      "start": 3877931,
+      "end": 3878046
     }, {
       "filename": "/usr/local/zeek/share/zeek/policy/tuning/track-all-assets.zeek",
-      "start": 3877915,
-      "end": 3878228
+      "start": 3878046,
+      "end": 3878359
     }, {
       "filename": "/usr/local/zeek/share/zeek/site/local.zeek",
-      "start": 3878228,
-      "end": 3882360
+      "start": 3878359,
+      "end": 3882491
     }, {
       "filename": "/usr/local/zeek/share/zeek/spicy/zeek.spicy",
-      "start": 3882360,
-      "end": 3910580
+      "start": 3882491,
+      "end": 3910711
     }, {
       "filename": "/usr/local/zeek/share/zeek/spicy/zeek_file.spicy",
-      "start": 3910580,
-      "end": 3911663
+      "start": 3910711,
+      "end": 3911794
     }, {
       "filename": "/usr/local/zeek/share/zeek/spicy/zeek_rt.hlt",
-      "start": 3911663,
-      "end": 3915524
+      "start": 3911794,
+      "end": 3915655
     }, {
       "filename": "/usr/local/zeek/share/zeek/test-all-policy.zeek",
-      "start": 3915524,
-      "end": 3923229
+      "start": 3915655,
+      "end": 3923360
     }, {
       "filename": "/usr/local/zeek/share/zeek/zeekygen/README",
-      "start": 3923229,
-      "end": 3923508
+      "start": 3923360,
+      "end": 3923639
     }, {
       "filename": "/usr/local/zeek/share/zeek/zeekygen/__load__.zeek",
-      "start": 3923508,
-      "end": 3924644
+      "start": 3923639,
+      "end": 3924775
     }, {
       "filename": "/usr/local/zeek/share/zeek/zeekygen/example.zeek",
-      "start": 3924644,
-      "end": 3932492
+      "start": 3924775,
+      "end": 3932623
     } ],
-    "remote_package_size": 3932492
+    "remote_package_size": 3932623
   });
 })();
 
-// end include: /tmp/tmp12o31fvh.js
-// include: /tmp/tmpz2ecu4pb.js
+// end include: /tmp/tmpffm1y0dg.js
+// include: /tmp/tmpcdfsut_5.js
 // All the pre-js content up to here must remain later on, we need to run
 // it.
 if (Module["$ww"] || (typeof ENVIRONMENT_IS_PTHREAD != "undefined" && ENVIRONMENT_IS_PTHREAD)) Module["preRun"] = [];
 
 var necessaryPreJSTasks = Module["preRun"].slice();
 
-// end include: /tmp/tmpz2ecu4pb.js
-// include: /tmp/tmp9lanf3cu.js
+// end include: /tmp/tmpcdfsut_5.js
+// include: /tmp/tmp_vvu0p2v.js
 if (!Module["preRun"]) throw "Module.preRun should exist because file support used it; did a pre-js delete it?";
 
 necessaryPreJSTasks.forEach(task => {
   if (Module["preRun"].indexOf(task) < 0) throw "All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?";
 });
 
-// end include: /tmp/tmp9lanf3cu.js
+// end include: /tmp/tmp_vvu0p2v.js
 // Sometimes an existing Module object exists with properties
 // meant to overwrite the default module functionality. Here
 // we collect those properties and reapply _after_ we configure

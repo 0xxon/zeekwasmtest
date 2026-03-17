@@ -20267,8 +20267,11 @@ event X509::log_cert_hashes_internal(lchs: set[LogCertHash])
 
 	# The manager re-distributes to all workers (including the one
 	# that sent the original event).
+
+@if ( Cluster::is_enabled() )
 	if ( Cluster::local_node_type() == Cluster::MANAGER )
 		Cluster::publish(Cluster::worker_topic, X509::log_cert_hashes_internal, lchs);
+@endif
 	}
 
 
@@ -20300,8 +20303,13 @@ event Cluster::node_up(name: string, id: string)
 # to any workers that restart.
 function publish_x509_log_cert_hash(lch: LogCertHash)
 	{
+@if ( Cluster::is_enabled() )
 	Cluster::publish(Cluster::manager_topic, X509::log_cert_hashes_internal, set(lch));
+@else
+	event X509::log_cert_hashes_internal(set(lch));
+@endif
 	}
+
 
 event file_state_remove(f: fa_file) &priority=5
 	{

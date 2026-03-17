@@ -1,0 +1,1064 @@
+From c1beffc3d715e88799c1c4671fcadcf6abbeb9c4 Mon Sep 17 00:00:00 2001
+From: Johanna Amann <johanna@corelight.com>
+Date: Tue, 17 Mar 2026 17:09:35 +0000
+Subject: [PATCH] Claude LSP webassemmbly build
+
+---
+ Cargo.lock                             |  28 +++-
+ Cargo.toml                             |  25 ++--
+ build-wasm.sh                          |  21 +++
+ crates/tree-sitter-zeek/build.rs       |  21 ++-
+ crates/zeek-lsp-web/.cargo/config.toml |   2 +
+ crates/zeek-lsp-web/Cargo.toml         |  23 ++++
+ crates/zeek-lsp-web/build.rs           |  53 ++++++++
+ crates/zeek-lsp-web/src/lib.rs         |  97 ++++++++++++++
+ crates/zeek-lsp-web/src/wasm_libc.rs   | 178 +++++++++++++++++++++++++
+ src/ast.rs                             |   4 +-
+ src/complete.rs                        |  10 +-
+ src/lib.rs                             |   2 +-
+ src/lsp.rs                             | 103 +++++++++++++-
+ src/parse.rs                           |   4 +-
+ src/query.rs                           |   4 +-
+ src/zeek.rs                            |  20 ++-
+ 16 files changed, 560 insertions(+), 35 deletions(-)
+ create mode 100755 build-wasm.sh
+ create mode 100644 crates/zeek-lsp-web/.cargo/config.toml
+ create mode 100644 crates/zeek-lsp-web/Cargo.toml
+ create mode 100644 crates/zeek-lsp-web/build.rs
+ create mode 100644 crates/zeek-lsp-web/src/lib.rs
+ create mode 100644 crates/zeek-lsp-web/src/wasm_libc.rs
+
+diff --git a/Cargo.lock b/Cargo.lock
+index f60dcc2..625e723 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1907,6 +1907,17 @@ dependencies = [
+  "serde_derive",
+ ]
+ 
++[[package]]
++name = "serde-wasm-bindgen"
++version = "0.6.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "8302e169f0eddcc139c70f139d19d6467353af16f9fce27e8c30158036a1e16b"
++dependencies = [
++ "js-sys",
++ "serde",
++ "wasm-bindgen",
++]
++
+ [[package]]
+ name = "serde_core"
+ version = "1.0.228"
+@@ -2524,8 +2535,6 @@ dependencies = [
+ [[package]]
+ name = "tree-sitter"
+ version = "0.26.7"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "e7a6592b1aec0109df37b6bafea77eb4e61466e37b0a5a98bef4f89bfb81b7a2"
+ dependencies = [
+  "cc",
+  "regex",
+@@ -3111,6 +3120,7 @@ dependencies = [
+  "insta",
+  "itertools 0.14.0",
+  "line-index",
++ "ls-types",
+  "opentelemetry",
+  "opentelemetry-otlp",
+  "opentelemetry-semantic-conventions",
+@@ -3145,6 +3155,20 @@ dependencies = [
+  "walkdir",
+ ]
+ 
++[[package]]
++name = "zeek-lsp-web"
++version = "0.1.0"
++dependencies = [
++ "js-sys",
++ "ls-types",
++ "serde",
++ "serde-wasm-bindgen",
++ "serde_json",
++ "smol_str",
++ "wasm-bindgen",
++ "zeek-language-server",
++]
++
+ [[package]]
+ name = "zerocopy"
+ version = "0.7.35"
+diff --git a/Cargo.toml b/Cargo.toml
+index 0bb781c..05360b8 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -25,6 +25,7 @@ eyre = { workspace = true }
+ futures = { workspace = true }
+ itertools = { workspace = true }
+ line-index = { workspace = true }
++ls-types = { workspace = true }
+ opentelemetry = { workspace = true, optional = true }
+ opentelemetry-otlp = { workspace = true, optional = true }
+ opentelemetry-semantic-conventions = { workspace = true }
+@@ -39,25 +40,27 @@ serde = { workspace = true }
+ serde_json = { workspace = true }
+ smol_str = { workspace = true }
+ streaming-iterator = { workspace = true }
+-tokio = { workspace = true }
+-tower-lsp-server = { workspace = true }
+ tracing = { workspace = true }
+-tracing-appender = { workspace = true }
+ tracing-opentelemetry = { workspace = true, optional = true }
+-tracing-subscriber = { workspace = true }
+ tree-sitter = { workspace = true }
++tree-sitter-zeek = { path = "crates/tree-sitter-zeek" }
++ustr = "1.1.0"
++
++[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
++tokio = { version = "1.50.0", features = ["rt-multi-thread", "process", "fs"], default-features = false }
++tower-lsp-server = { version = "0.23.0", features = ["runtime-tokio"], default-features = false }
++tracing-appender = { workspace = true }
++tracing-subscriber = { workspace = true }
+ tree-sitter-bash = { workspace = true }
+ tree-sitter-btest = { workspace = true }
+ tree-sitter-highlight = { workspace = true }
+ tree-sitter-printf = { workspace = true }
+ tree-sitter-regex = { workspace = true }
+ tree-sitter-rst = { workspace = true }
+-tree-sitter-zeek = { path = "crates/tree-sitter-zeek" }
+-ustr = "1.1.0"
+ walkdir = { workspace = true }
+ 
+ [workspace]
+-members = [".", "crates/tree-sitter-zeek"]
++members = [".", "crates/tree-sitter-zeek", "crates/zeek-lsp-web"]
+ 
+ [workspace.dependencies]
+ cc = "1.2.57"
+@@ -67,6 +70,7 @@ eyre = { default-features = false, version = "0.6.12", features = ["auto-install
+ futures = { default-features = false, version = "0.3.32" }
+ itertools = "0.14.0"
+ line-index = { version = "0.1.2", default-features = false }
++ls-types = { version = "0.0", default-features = false }
+ opentelemetry = { version = "0.26.0", features = ["trace"] }
+ opentelemetry-otlp = { version = "0.26.0", features = ["grpc-tonic", "trace"], default-features = false }
+ opentelemetry-semantic-conventions = { version = "0.31.0", default-features = false }
+@@ -81,8 +85,8 @@ serde = { version = "1.0.228", default-features = false }
+ serde_json = { default-features = false, version = "1.0.149" }
+ smol_str = { version = "0.3.6", default-features = false, features = ["std"] }
+ streaming-iterator = { version = "0.1.9", default-features = false }
+-tokio = { version = "1.50.0", features = ["fs", "io-std", "io-util", "rt-multi-thread", "process", "macros", "sync"], default-features = false }
+-tower-lsp-server = { version = "0.23.0", features = ["runtime-tokio"], default-features = false }
++tokio = { version = "1.50.0", features = ["rt", "io-std", "io-util", "macros", "sync"], default-features = false }
++tower-lsp-server = { version = "0.23.0", default-features = false }
+ tracing = { features = ["attributes"], default-features = false, version = "0.1.44" }
+ tracing-appender = { version = "0.2.4", default-features = false }
+ tracing-opentelemetry = { version = "0.27.0" }
+@@ -124,3 +128,6 @@ missing_errors_doc = "allow"
+ ignored_unit_patterns = "deny"
+ clone_on_ref_ptr = "deny"
+ redundant_clone = "deny"
++
++[patch.crates-io]
++tree-sitter = { path = "vendor/tree-sitter" }
+diff --git a/build-wasm.sh b/build-wasm.sh
+new file mode 100755
+index 0000000..6c55433
+--- /dev/null
++++ b/build-wasm.sh
+@@ -0,0 +1,21 @@
++#!/usr/bin/env bash
++# Build the Zeek LSP WASM module and output to site/pkg/.
++set -euo pipefail
++
++SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
++SITE_DIR="$(dirname "$SCRIPT_DIR")/site"
++
++# Clang-19 is needed to compile tree-sitter C code for wasm32.
++export CC_wasm32_unknown_unknown=clang-19
++export AR_wasm32_unknown_unknown=llvm-ar-19
++
++echo "Building Zeek LSP WASM..."
++
++wasm-pack build \
++  --target web \
++  --out-dir "$SITE_DIR/pkg" \
++  --release \
++  "$SCRIPT_DIR/crates/zeek-lsp-web"
++
++echo "Done. Output at: $SITE_DIR/pkg/"
++echo "To serve: cd $SITE_DIR && python3 serve.py"
+diff --git a/crates/tree-sitter-zeek/build.rs b/crates/tree-sitter-zeek/build.rs
+index 90b89ef..4635e74 100644
+--- a/crates/tree-sitter-zeek/build.rs
++++ b/crates/tree-sitter-zeek/build.rs
+@@ -65,11 +65,22 @@ fn main() {
+     // Compile tree-sitter C output.
+     let parser_c = out_dir.join("parser.c");
+ 
+-    Build::new()
+-        .file(&parser_c)
+-        .include(out_dir)
+-        .warnings(false)
+-        .compile("tree-sitter-zeek");
++    let mut build = Build::new();
++    build.file(&parser_c).include(&out_dir).warnings(false);
++
++    // For wasm32-unknown-unknown, add standard C headers from the Emscripten sysroot
++    // and compile with atomics/bulk-memory features so --shared-memory linking succeeds.
++    if std::env::var("CARGO_CFG_TARGET_ARCH").as_deref() == Ok("wasm32") {
++        let emscripten_include = std::env::var("EMSCRIPTEN_SYSROOT_INCLUDE")
++            .unwrap_or_else(|_| "/usr/share/emscripten/cache/sysroot/include".to_string());
++        build
++            .include(emscripten_include)
++            .flag("-matomics")
++            .flag("-mbulk-memory")
++            .flag("-mmutable-globals");
++    }
++
++    build.compile("tree-sitter-zeek");
+ 
+     generate_keywords(&parser_c);
+ }
+diff --git a/crates/zeek-lsp-web/.cargo/config.toml b/crates/zeek-lsp-web/.cargo/config.toml
+new file mode 100644
+index 0000000..c5b02b6
+--- /dev/null
++++ b/crates/zeek-lsp-web/.cargo/config.toml
+@@ -0,0 +1,2 @@
++[target.wasm32-unknown-unknown]
++rustflags = []
+diff --git a/crates/zeek-lsp-web/Cargo.toml b/crates/zeek-lsp-web/Cargo.toml
+new file mode 100644
+index 0000000..82d9170
+--- /dev/null
++++ b/crates/zeek-lsp-web/Cargo.toml
+@@ -0,0 +1,23 @@
++[package]
++name = "zeek-lsp-web"
++version = "0.1.0"
++edition = "2021"
++
++[lib]
++crate-type = ["cdylib"]
++
++[dependencies]
++wasm-bindgen = "0.2"
++js-sys = "0.3"
++serde = { version = "1", features = ["derive"] }
++serde_json = { version = "1", default-features = false, features = ["alloc"] }
++serde-wasm-bindgen = "0.6"
++zeek-language-server = { path = "../..", default-features = false }
++ls-types = { version = "0.0", default-features = false }
++smol_str = { version = "0.3", default-features = false, features = ["std"] }
++
++[package.metadata.wasm-pack.profile.release]
++wasm-opt = false
++
++[lints.clippy]
++pedantic = "allow"
+diff --git a/crates/zeek-lsp-web/build.rs b/crates/zeek-lsp-web/build.rs
+new file mode 100644
+index 0000000..99759f4
+--- /dev/null
++++ b/crates/zeek-lsp-web/build.rs
+@@ -0,0 +1,53 @@
++use std::{
++    env,
++    fs::{self, File},
++    io::Write,
++    path::{Path, PathBuf},
++};
++
++fn main() {
++    let scripts_dir = env::var("ZEEK_SCRIPTS_DIR")
++        .unwrap_or_else(|_| "/home/johanna/web-test/zeek-install/share/zeek".to_string());
++    let scripts_path = Path::new(&scripts_dir);
++
++    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
++    let stdlib_rs = out_dir.join("stdlib.rs");
++    let mut out = File::create(&stdlib_rs).expect("cannot create stdlib.rs");
++
++    writeln!(out, "pub static STDLIB_FILES: &[(&str, &str)] = &[").unwrap();
++
++    if scripts_path.exists() {
++        collect_zeek_files(scripts_path, scripts_path, &mut out);
++    }
++
++    writeln!(out, "];").unwrap();
++
++    println!("cargo:rerun-if-changed=build.rs");
++    println!("cargo:rerun-if-env-changed=ZEEK_SCRIPTS_DIR");
++}
++
++fn collect_zeek_files(base: &Path, dir: &Path, out: &mut File) {
++    let mut entries: Vec<_> = match fs::read_dir(dir) {
++        Ok(rd) => rd.filter_map(|e| e.ok()).collect(),
++        Err(_) => return,
++    };
++    entries.sort_by_key(|e| e.path());
++
++    for entry in entries {
++        let path = entry.path();
++        if path.is_dir() && path.file_name().and_then(|s| s.to_str()) != Some("cmake") {
++            collect_zeek_files(base, &path, out);
++        } else if path.extension().and_then(|s| s.to_str()) == Some("zeek") {
++            let rel = path.strip_prefix(base).unwrap();
++            let virtual_path = format!("/zeek/scripts/{}", rel.display());
++            let abs = path.canonicalize().unwrap_or(path.clone());
++            writeln!(
++                out,
++                "    ({:?}, include_str!({:?})),",
++                virtual_path,
++                abs.display().to_string()
++            )
++            .unwrap();
++        }
++    }
++}
+diff --git a/crates/zeek-lsp-web/src/lib.rs b/crates/zeek-lsp-web/src/lib.rs
+new file mode 100644
+index 0000000..00e1d5b
+--- /dev/null
++++ b/crates/zeek-lsp-web/src/lib.rs
+@@ -0,0 +1,97 @@
++use std::{path::PathBuf, sync::Arc};
++
++use ls_types::{
++    CompletionParams, CompletionResponse, Position, TextDocumentIdentifier,
++    TextDocumentPositionParams, Uri,
++};
++use wasm_bindgen::prelude::*;
++use zeek_language_server::{
++    ast::Ast,
++    complete::complete,
++    lsp::{Database, SourceUpdate, hover_at},
++};
++
++// C stdlib shims so tree-sitter's libc calls resolve internally, not as WASM "env" imports.
++mod wasm_libc;
++
++// Embedded stdlib files generated by build.rs
++include!(concat!(env!("OUT_DIR"), "/stdlib.rs"));
++
++/// An LSP analysis session backed by an in-memory Zeek database.
++#[wasm_bindgen]
++pub struct Session {
++    db: Database,
++}
++
++#[wasm_bindgen]
++impl Session {
++    /// Create a new session pre-loaded with the bundled Zeek stdlib.
++    #[wasm_bindgen(constructor)]
++    pub fn new() -> Session {
++        let mut db = Database::default();
++
++        // Set the stdlib prefix so @load resolution works.
++        let prefix = PathBuf::from("/zeek/scripts");
++        db.set_prefixes(Arc::from(vec![prefix]));
++
++        // Seed the database with all bundled stdlib files.
++        // Note: Uri::from_file_path() fails on wasm32-unknown-unknown, so we
++        // construct file:// URIs directly from the virtual paths.
++        let updates: Vec<SourceUpdate> = STDLIB_FILES
++            .iter()
++            .filter_map(|(path, content)| {
++                let uri_str = format!("file://{path}");
++                let uri = Arc::new(uri_str.parse::<Uri>().ok()?);
++                Some(SourceUpdate::Update(uri, smol_str::SmolStr::from(*content)))
++            })
++            .collect();
++        db.update_sources(&updates);
++
++        Session { db }
++    }
++
++    /// Add or replace file content in the session.
++    pub fn set_file(&mut self, uri: &str, content: &str) {
++        if let Ok(uri) = uri.parse::<Uri>() {
++            self.db.update_sources(&[SourceUpdate::Update(
++                Arc::new(uri),
++                smol_str::SmolStr::from(content),
++            )]);
++        }
++    }
++
++    /// Compute completions at a position. Returns JSON (LSP CompletionList) or null.
++    pub fn complete(&self, uri: &str, line: u32, col: u32) -> JsValue {
++        let result = (|| -> Option<CompletionResponse> {
++            let uri: Uri = uri.parse().ok()?;
++            let params = CompletionParams {
++                text_document_position: TextDocumentPositionParams {
++                    text_document: TextDocumentIdentifier { uri },
++                    position: Position::new(line, col),
++                },
++                work_done_progress_params: Default::default(),
++                partial_result_params: Default::default(),
++                context: None,
++            };
++            complete(&self.db, params)
++        })();
++
++        match result {
++            Some(r) => serde_wasm_bindgen::to_value(&r).unwrap_or(JsValue::NULL),
++            None => JsValue::NULL,
++        }
++    }
++
++    /// Compute hover information at a position. Returns JSON (LSP Hover) or null.
++    pub fn hover(&self, uri: &str, line: u32, col: u32) -> JsValue {
++        let result = (|| -> Option<_> {
++            let uri: Uri = uri.parse().ok()?;
++            hover_at(&self.db, Arc::new(uri), Position::new(line, col))
++        })();
++
++        match result {
++            Some(h) => serde_wasm_bindgen::to_value(&h).unwrap_or(JsValue::NULL),
++            None => JsValue::NULL,
++        }
++    }
++}
+diff --git a/crates/zeek-lsp-web/src/wasm_libc.rs b/crates/zeek-lsp-web/src/wasm_libc.rs
+new file mode 100644
+index 0000000..e73e04b
+--- /dev/null
++++ b/crates/zeek-lsp-web/src/wasm_libc.rs
+@@ -0,0 +1,178 @@
++/// C stdlib shims for wasm32-unknown-unknown.
++/// These prevent tree-sitter's C code from generating "env" WASM imports,
++/// which browsers cannot satisfy without an importmap polyfill.
++use core::ffi::c_void;
++use std::alloc::Layout;
++
++// Each allocation is prefixed with an 8-byte header storing the usable size.
++const HEADER: usize = 8;
++
++unsafe fn alloc_with_header(size: usize) -> *mut c_void {
++    if size == 0 {
++        return core::ptr::null_mut();
++    }
++    let layout = Layout::from_size_align_unchecked(size + HEADER, HEADER);
++    let raw = std::alloc::alloc(layout);
++    if raw.is_null() {
++        return core::ptr::null_mut();
++    }
++    (raw as *mut usize).write(size);
++    raw.add(HEADER) as *mut c_void
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn malloc(size: usize) -> *mut c_void {
++    alloc_with_header(size)
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn calloc(nmemb: usize, size: usize) -> *mut c_void {
++    let total = nmemb.saturating_mul(size);
++    let ptr = alloc_with_header(total);
++    if !ptr.is_null() {
++        core::ptr::write_bytes(ptr as *mut u8, 0, total);
++    }
++    ptr
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn realloc(ptr: *mut c_void, new_size: usize) -> *mut c_void {
++    if ptr.is_null() {
++        return alloc_with_header(new_size);
++    }
++    if new_size == 0 {
++        free(ptr);
++        return core::ptr::null_mut();
++    }
++    let raw = (ptr as *mut u8).sub(HEADER);
++    let old_size = (raw as *const usize).read();
++    let old_layout = Layout::from_size_align_unchecked(old_size + HEADER, HEADER);
++    let new_raw = std::alloc::realloc(raw, old_layout, new_size + HEADER);
++    if new_raw.is_null() {
++        return core::ptr::null_mut();
++    }
++    (new_raw as *mut usize).write(new_size);
++    new_raw.add(HEADER) as *mut c_void
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn free(ptr: *mut c_void) {
++    if ptr.is_null() {
++        return;
++    }
++    let raw = (ptr as *mut u8).sub(HEADER);
++    let size = (raw as *const usize).read();
++    let layout = Layout::from_size_align_unchecked(size + HEADER, HEADER);
++    std::alloc::dealloc(raw, layout);
++}
++
++#[no_mangle]
++pub extern "C" fn abort() -> ! {
++    panic!("abort() called from C")
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn __assert_fail(
++    _msg: *const u8,
++    _file: *const u8,
++    _line: u32,
++    _func: *const u8,
++) {
++    panic!("C assertion failed")
++}
++
++// Timestamp — not needed for parsing correctness.
++#[no_mangle]
++pub extern "C" fn now() -> f64 {
++    0.0
++}
++
++// No-op I/O — tree-sitter only uses these for debug output.
++// Signatures match the WASM import types produced by this binary.
++#[no_mangle]
++pub unsafe extern "C" fn fprintf(_stream: *mut c_void, _fmt: *const u8, _arg: usize) -> i32 {
++    0
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn fwrite(
++    _ptr: *const c_void,
++    _size: usize,
++    _nmemb: usize,
++    _stream: *mut c_void,
++) -> usize {
++    0
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn fputc(_c: i32, _stream: *mut c_void) -> i32 {
++    0
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn fclose(_stream: *mut c_void) -> i32 {
++    0
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn fdopen(_fd: i32, _mode: *const u8) -> *mut c_void {
++    core::ptr::null_mut()
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn snprintf(
++    _buf: *mut u8,
++    _n: usize,
++    _fmt: *const u8,
++    _arg: usize,
++) -> i32 {
++    0
++}
++
++#[no_mangle]
++pub unsafe extern "C" fn vsnprintf(
++    _buf: *mut u8,
++    _n: usize,
++    _fmt: *const u8,
++    _args: *mut c_void,
++) -> i32 {
++    0
++}
++
++// strncmp — used by tree-sitter for keyword matching.
++#[no_mangle]
++pub unsafe extern "C" fn strncmp(s1: *const u8, s2: *const u8, n: usize) -> i32 {
++    for i in 0..n {
++        let a = *s1.add(i);
++        let b = *s2.add(i);
++        if a != b {
++            return (a as i32) - (b as i32);
++        }
++        if a == 0 {
++            return 0;
++        }
++    }
++    0
++}
++
++// Wide character classification — used by tree-sitter's lexer.
++#[no_mangle]
++pub extern "C" fn iswspace(c: i32) -> i32 {
++    matches!(
++        c as u32,
++        0x09 | 0x0A | 0x0B | 0x0C | 0x0D | 0x20 | 0x85 | 0xA0
++            | 0x1680
++            | 0x2000..=0x200A
++            | 0x2028
++            | 0x2029
++            | 0x202F
++            | 0x205F
++            | 0x3000
++    ) as i32
++}
++
++#[no_mangle]
++pub extern "C" fn iswalnum(c: i32) -> i32 {
++    let c = c as u32;
++    ((c >= 0x30 && c <= 0x39) || (c >= 0x41 && c <= 0x5A) || (c >= 0x61 && c <= 0x7A) || c > 0x7F) as i32
++}
+diff --git a/src/ast.rs b/src/ast.rs
+index ca9b1e4..45081e6 100644
+--- a/src/ast.rs
++++ b/src/ast.rs
+@@ -4,7 +4,7 @@ use std::{
+     sync::Arc,
+ };
+ 
+-use tower_lsp_server::ls_types::Uri;
++use ls_types::Uri;
+ use tracing::{instrument, warn};
+ 
+ use crate::{
+@@ -845,7 +845,7 @@ mod test {
+     use std::{ops::Deref, path::PathBuf, str::FromStr, sync::Arc};
+ 
+     use insta::assert_debug_snapshot;
+-    use tower_lsp_server::ls_types::{Position, Range, Uri};
++    use ls_types::{Position, Range, Uri};
+ 
+     use crate::{
+         Files,
+diff --git a/src/complete.rs b/src/complete.rs
+index 48c5ce6..720dc45 100644
+--- a/src/complete.rs
++++ b/src/complete.rs
+@@ -10,14 +10,14 @@ use crate::{
+ };
+ 
+ use itertools::Itertools;
+-use tower_lsp_server::ls_types::{
++use ls_types::{
+     CompletionItem, CompletionItemKind, CompletionItemLabelDetails, CompletionParams,
+     CompletionResponse, Documentation, InsertTextFormat, MarkupContent, MarkupKind, Position, Uri,
+ };
+ use tree_sitter_zeek::KEYWORDS;
+ 
+ #[allow(clippy::too_many_lines)]
+-pub(crate) fn complete(state: &Database, params: CompletionParams) -> Option<CompletionResponse> {
++pub fn complete(state: &Database, params: CompletionParams) -> Option<CompletionResponse> {
+     let uri = Arc::new(params.text_document_position.text_document.uri);
+     let position = params.text_document_position.position;
+ 
+@@ -256,7 +256,7 @@ fn complete_from_decls(state: &Database, uri: Arc<Uri>, kind: &str) -> Vec<Compl
+         .chain(implicit_decls.iter())
+         .chain(explicit_decls_recursive.iter())
+         .filter(|d| match &d.kind {
+-            DeclKind::EventDecl(_) => kind == "event",
++            DeclKind::EventDecl(_) | DeclKind::EventDef(_) => kind == "event",
+             DeclKind::FuncDecl(_) => kind == "function",
+             DeclKind::HookDecl(_) => kind == "hook",
+             _ => false,
+@@ -265,7 +265,7 @@ fn complete_from_decls(state: &Database, uri: Arc<Uri>, kind: &str) -> Vec<Compl
+         .filter_map(|d| {
+             let item = to_completion_item(d);
+             let signature = match &d.kind {
+-                DeclKind::EventDecl(s) | DeclKind::FuncDecl(s) | DeclKind::HookDecl(s) => Some(
++                DeclKind::EventDecl(s) | DeclKind::EventDef(s) | DeclKind::FuncDecl(s) | DeclKind::HookDecl(s) => Some(
+                     s.args
+                         .iter()
+                         .filter_map(|d| {
+@@ -695,7 +695,7 @@ mod test {
+     #![allow(clippy::unwrap_used)]
+ 
+     use insta::assert_debug_snapshot;
+-    use tower_lsp_server::ls_types::{
++    use ls_types::{
+         CompletionContext, CompletionItem, CompletionItemKind, CompletionParams,
+         CompletionResponse, CompletionTriggerKind, Documentation, PartialResultParams, Position,
+         TextDocumentIdentifier, TextDocumentPositionParams, Uri, WorkDoneProgressParams,
+diff --git a/src/lib.rs b/src/lib.rs
+index 9feb89b..2fdc450 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -1,5 +1,5 @@
+ use std::sync::Arc;
+-use tower_lsp_server::ls_types::{ClientCapabilities, Uri};
++use ls_types::{ClientCapabilities, Uri};
+ use tracing::instrument;
+ 
+ pub mod ast;
+diff --git a/src/lsp.rs b/src/lsp.rs
+index 323cd0a..758b448 100644
+--- a/src/lsp.rs
++++ b/src/lsp.rs
+@@ -13,6 +13,8 @@ use rustc_hash::FxHashSet;
+ use salsa::ParallelDatabase;
+ use serde::Deserialize;
+ use std::{fmt::Debug, path::PathBuf, sync::Arc};
++use ls_types::{Hover, HoverContents, LanguageString, MarkedString, Position, Range, Uri};
++#[cfg(not(target_arch = "wasm32"))]
+ use tower_lsp_server::{
+     LanguageServer, LspService, Server,
+     jsonrpc::{Error, Result},
+@@ -24,17 +26,17 @@ use tower_lsp_server::{
+         DidSaveTextDocumentParams, DocumentFormattingParams, DocumentRangeFormattingParams,
+         DocumentSymbol, DocumentSymbolParams, DocumentSymbolResponse, FileChangeType, FileEvent,
+         FoldingRange, FoldingRangeParams, FoldingRangeProviderCapability, GotoDefinitionParams,
+-        GotoDefinitionResponse, Hover, HoverContents, HoverParams, HoverProviderCapability,
++        GotoDefinitionResponse, HoverParams, HoverProviderCapability,
+         ImplementationProviderCapability, InitializeParams, InitializeResult, InitializedParams,
+         InlayHint, InlayHintKind, InlayHintLabel, InlayHintParams, InlayHintTooltip,
+-        LanguageString, Location, MarkedString, MarkupContent, MarkupKind, MessageType,
+-        NumberOrString, OneOf, ParameterInformation, ParameterLabel, Position, ProgressParams,
+-        ProgressParamsValue, ProgressToken, Range, ReferenceParams, RenameParams,
++        Location, MarkupContent, MarkupKind, MessageType,
++        NumberOrString, OneOf, ParameterInformation, ParameterLabel, ProgressParams,
++        ProgressParamsValue, ProgressToken, ReferenceParams, RenameParams,
+         SemanticTokensFullOptions, SemanticTokensOptions, SemanticTokensParams,
+         SemanticTokensResult, SemanticTokensServerCapabilities, ServerCapabilities, ServerInfo,
+         SignatureHelp, SignatureHelpOptions, SignatureHelpParams, SignatureInformation,
+         SymbolInformation, SymbolKind, TextDocumentSyncCapability, TextDocumentSyncKind, TextEdit,
+-        Uri, WorkDoneProgress, WorkDoneProgressBegin, WorkDoneProgressCreateParams,
++        WorkDoneProgress, WorkDoneProgressBegin, WorkDoneProgressCreateParams,
+         WorkDoneProgressEnd, WorkDoneProgressReport, WorkspaceEdit, WorkspaceSymbolParams,
+         WorkspaceSymbolResponse,
+         notification::Progress,
+@@ -45,6 +47,7 @@ use tower_lsp_server::{
+     },
+ };
+ use tracing::{error, instrument, trace_span, warn};
++#[cfg(not(target_arch = "wasm32"))]
+ use walkdir::WalkDir;
+ 
+ #[cfg(test)]
+@@ -136,17 +139,20 @@ impl Debug for Database {
+     }
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ #[derive(Debug, Default)]
+ pub struct Backend {
+     pub client: Option<tower_lsp_server::Client>,
+     state: tokio::sync::RwLock<Database>,
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ enum ParseResult {
+     Ok,
+     HasDiagnostics,
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ impl Backend {
+     async fn client_message<M>(&self, level: MessageType, message: M)
+     where
+@@ -371,6 +377,7 @@ impl Backend {
+     }
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ impl LanguageServer for Backend {
+     #[instrument]
+     async fn initialize(&self, params: InitializeParams) -> Result<InitializeResult> {
+@@ -1566,6 +1573,84 @@ fn fuzzy_search_symbol(db: &Database, symbol: &str) -> impl Iterator<Item = (f32
+     })
+ }
+ 
++/// Synchronous hover computation, callable from WASM or native code.
++pub fn hover_at(state: &Database, uri: Arc<Uri>, position: Position) -> Option<Hover> {
++    let source = state.source(Arc::clone(&uri))?;
++    let tree = state.parse(Arc::clone(&uri))?;
++    let node = tree.root_node();
++    let node = node.named_descendant_for_position(position)?;
++    let text = node.utf8_text(source.as_bytes()).ok()?;
++
++    let mut contents = Vec::new();
++
++    match node.kind() {
++        "id" => {
++            if let Some(decl) = &state.resolve(NodeLocation::from_node(Arc::clone(&uri), node)) {
++                let kind = match decl.kind {
++                    DeclKind::Global => "global",
++                    DeclKind::Option => "option",
++                    DeclKind::Const => "constant",
++                    DeclKind::Redef => "redef",
++                    DeclKind::RedefEnum(_) => "redef enum",
++                    DeclKind::RedefRecord(_) => "redef record",
++                    DeclKind::Enum(_) => "enum",
++                    DeclKind::Type(_) => "record",
++                    DeclKind::FuncDef(_) | DeclKind::FuncDecl(_) => "function",
++                    DeclKind::HookDef(_) | DeclKind::HookDecl(_) => "hook",
++                    DeclKind::EventDef(_) | DeclKind::EventDecl(_) => "event",
++                    DeclKind::Variable => "variable",
++                    DeclKind::Field(_) => "field",
++                    DeclKind::EnumMember => "enum member",
++                    DeclKind::Index(_, _) => "indexing result",
++                    DeclKind::Module => "module",
++                    DeclKind::Builtin(_) => "builtin",
++                };
++                contents.push(MarkedString::String(format!("### {kind} `{id}`", id = decl.fqid)));
++                if let Some(typ) = state.typ(Arc::clone(decl)) {
++                    contents.push(MarkedString::String(format!("Type: `{}`", typ.fqid)));
++                }
++                contents.push(MarkedString::String(decl.documentation.to_string()));
++            }
++        }
++        "file" => {
++            let file = std::path::PathBuf::from(text);
++            let resolved = load_to_file(
++                &file,
++                uri.as_ref(),
++                state.files().as_ref(),
++                state.prefixes().as_ref(),
++            );
++            if let Some(resolved) = resolved {
++                contents.push(MarkedString::String(format!("`{}`", resolved.path())));
++            }
++        }
++        "comment_body" => {
++            let try_update = |contents: &mut Vec<_>| {
++                let symbol = word_at_position(&source, position)?;
++                if let Some(docs) = fuzzy_search_symbol(state, &symbol)
++                    .filter(|(_, d)| !matches!(d.kind, DeclKind::EventDef(_)))
++                    .sorted_by(|(r1, _), (r2, _)| r1.total_cmp(r2))
++                    .next_back()
++                    .map(|(_, d)| d.documentation.to_string())
++                {
++                    contents.push(MarkedString::String(docs));
++                }
++                Some(())
++            };
++            try_update(&mut contents);
++        }
++        _ => {}
++    }
++
++    let hover = Hover {
++        contents: HoverContents::Array(contents),
++        range: Some(node.range()),
++    };
++
++    Some(hover)
++}
++
++#[cfg(not(target_arch = "wasm32"))]
+ fn to_symbol_kind(kind: &DeclKind) -> SymbolKind {
+     match kind {
+         DeclKind::Global | DeclKind::Variable | DeclKind::Redef | DeclKind::Index(_, _) => {
+@@ -1585,6 +1670,7 @@ fn to_symbol_kind(kind: &DeclKind) -> SymbolKind {
+     }
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ pub async fn run() {
+     let (service, socket) = LspService::new(|client| Backend {
+         client: Some(client),
+@@ -1656,9 +1742,11 @@ impl InitializationOptions {
+     }
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ const ERROR_CODE_IS_MISSING: i32 = 1;
+ 
+ /// Extracts all errors in a AST.
++#[cfg(not(target_arch = "wasm32"))]
+ fn tree_diagnostics(tree: &query::Node) -> impl Iterator<Item = Diagnostic> {
+     tree.errors().map(|err| {
+         let code = if err.is_missing() {
+@@ -1680,6 +1768,7 @@ fn tree_diagnostics(tree: &query::Node) -> impl Iterator<Item = Diagnostic> {
+     })
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ async fn references(db: &Database, decl: Arc<Decl>) -> FxHashSet<NodeLocation> {
+     /// Helper to compute all sources reachable from a given file.
+     fn all_sources(f: Arc<Uri>, db: &Database) -> FxHashSet<Arc<Uri>> {
+@@ -1755,6 +1844,7 @@ async fn references(db: &Database, decl: Arc<Decl>) -> FxHashSet<NodeLocation> {
+         .collect()
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ mod semantic_tokens {
+     use std::sync::LazyLock;
+ 
+@@ -2010,7 +2100,7 @@ mod semantic_tokens {
+     #[cfg(test)]
+     mod test {
+         use insta::assert_debug_snapshot;
+-        use tower_lsp_server::ls_types::{Position, SemanticToken, SemanticTokenType};
++        use ls_types::{Position, SemanticToken, SemanticTokenType};
+ 
+         use crate::lsp::semantic_tokens::{highlight, legend};
+ 
+@@ -2080,6 +2170,7 @@ mod semantic_tokens {
+     }
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ const RST_HIGHLIGHT: &str = "
+ (literal) @macro
+ 
+diff --git a/src/parse.rs b/src/parse.rs
+index 709fc82..3e10f6a 100644
+--- a/src/parse.rs
++++ b/src/parse.rs
+@@ -1,6 +1,6 @@
+ use crate::{Files, query::Node};
+ use std::sync::Arc;
+-use tower_lsp_server::ls_types::Uri;
++use ls_types::Uri;
+ use tracing::instrument;
+ use tree_sitter::Parser;
+ use tree_sitter_zeek::language_zeek;
+@@ -57,7 +57,7 @@ mod test {
+         crate::{lsp::TestDatabase, parse::Parse},
+         insta::assert_debug_snapshot,
+         std::sync::Arc,
+-        tower_lsp_server::ls_types::Uri,
++        ls_types::Uri,
+     };
+ 
+     const SOURCE: &str = "event zeek_init() {}";
+diff --git a/src/query.rs b/src/query.rs
+index 529463d..2b046b4 100644
+--- a/src/query.rs
++++ b/src/query.rs
+@@ -8,7 +8,7 @@ use std::{
+     sync::{Arc, LazyLock},
+ };
+ use streaming_iterator::{StreamingIterator, StreamingIteratorMut, convert};
+-use tower_lsp_server::ls_types::{Position, Range, Uri};
++use ls_types::{Position, Range, Uri};
+ use tracing::{debug, error, instrument};
+ use tree_sitter_zeek::language_zeek;
+ 
+@@ -1423,7 +1423,7 @@ mod test {
+     use crate::{Files, lsp::TestDatabase, parse::Parse, query::Node};
+     use insta::assert_debug_snapshot;
+     use itertools::Itertools;
+-    use tower_lsp_server::ls_types::{Position, Uri};
++    use ls_types::{Position, Uri};
+ 
+     use super::Query;
+ 
+diff --git a/src/zeek.rs b/src/zeek.rs
+index 229c6f8..0c81a97 100644
+--- a/src/zeek.rs
++++ b/src/zeek.rs
+@@ -1,4 +1,6 @@
++#[cfg(not(target_arch = "wasm32"))]
+ use itertools::Itertools;
++#[cfg(not(target_arch = "wasm32"))]
+ use std::{
+     ffi::OsStr,
+     path::{Path, PathBuf},
+@@ -7,11 +9,16 @@ use std::{
+     sync::LazyLock,
+ };
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ use eyre::{Result, eyre};
++#[cfg(not(target_arch = "wasm32"))]
+ use path_clean::PathClean;
++#[cfg(not(target_arch = "wasm32"))]
+ use tokio::io::{AsyncReadExt, AsyncWriteExt};
++#[cfg(not(target_arch = "wasm32"))]
+ use walkdir::WalkDir;
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ async fn zeek_config<I, S>(args: I) -> Result<std::process::Output>
+ where
+     I: IntoIterator<Item = S>,
+@@ -24,6 +31,7 @@ where
+         .map_err(|_| eyre!("zeek-config not found in PATH"))
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ #[derive(Copy, Debug, Clone)]
+ enum ZeekDir {
+     Script,
+@@ -31,6 +39,7 @@ enum ZeekDir {
+     Site,
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ async fn dir(dir: ZeekDir) -> Result<PathBuf> {
+     let flag = match dir {
+         ZeekDir::Script => "--script_dir",
+@@ -48,6 +57,7 @@ async fn dir(dir: ZeekDir) -> Result<PathBuf> {
+     Ok(dir.into())
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ /// Get all prefixes understood by Zeek.
+ ///
+ /// # Arguments
+@@ -83,6 +93,7 @@ pub async fn prefixes(zeekpath: Option<String>) -> Result<impl Iterator<Item = P
+     Ok(xs.into_iter().unique())
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ #[derive(Debug)]
+ pub struct CheckResult {
+     pub file: String,
+@@ -91,12 +102,14 @@ pub struct CheckResult {
+     pub kind: ErrorKind,
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ #[derive(Debug, PartialEq)]
+ pub enum ErrorKind {
+     Warning,
+     Error,
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ /// Check the file for with Zeek from the given directory.
+ ///
+ /// # Errors
+@@ -143,6 +156,7 @@ pub async fn check<P1: AsRef<Path>, P2: AsRef<Path>>(
+         .collect())
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ #[derive(Debug, PartialEq)]
+ pub struct SystemFile {
+     /// Full path of the file.
+@@ -152,6 +166,7 @@ pub struct SystemFile {
+     prefix: PathBuf,
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ impl SystemFile {
+     #[must_use]
+     pub fn new(path: PathBuf, prefix: PathBuf) -> Self {
+@@ -159,6 +174,7 @@ impl SystemFile {
+     }
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ pub async fn system_files() -> Result<impl Iterator<Item = SystemFile>> {
+     Ok(prefixes(None).await?.flat_map(|dir| {
+         WalkDir::new(dir.clone())
+@@ -188,10 +204,12 @@ pub(crate) fn essential_input_files() -> impl Iterator<Item = &'static str> {
+     .into_iter()
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ pub(crate) async fn has_format() -> bool {
+     format("").await.is_ok()
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
+ pub(crate) async fn format(doc: &str) -> Result<String> {
+     let mut fmt = tokio::process::Command::new("zeek-format")
+         .stdin(Stdio::piped())
+@@ -223,7 +241,7 @@ pub(crate) async fn format(doc: &str) -> Result<String> {
+     Ok(buffer)
+ }
+ 
+-#[cfg(test)]
++#[cfg(all(test, not(target_arch = "wasm32")))]
+ mod test {
+     #![allow(clippy::unwrap_used)]
+ 
+-- 
+2.47.3
+

@@ -1,0 +1,15 @@
+{
+  "name": "zeek-lsp-web",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "zeek_lsp_web_bg.wasm",
+    "zeek_lsp_web.js",
+    "zeek_lsp_web.d.ts"
+  ],
+  "main": "zeek_lsp_web.js",
+  "types": "zeek_lsp_web.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
